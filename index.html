@@ -28,52 +28,111 @@
         </div>
     </header>
 
+    <!-- 1. HOME (HERO) REESTRUTURADA E CENTRALIZADA -->
     <section id="home" class="hero">
         <div class="hero-bg-animation"></div>
         <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="badge">Pesquisa Aplicada & Inovação Industrial</div>
-            <h1>Laboratório de Gestão e Usos Finais de<br> <span class="text-gradient">  Energia</span></h1>
-            <p>Soluções tecnológicas institucionais para o desenvolvimento, homologação e conformidade técnica de produtos.</p>
-            <div class="hero-buttons">
-                <a href="#sobre" class="btn btn-primary">Conheça o Laboratório</a>
-                <a href="#normas" class="btn btn-secondary">Normas Atendidas</a>
+        <div class="container" style="position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; min-height: 100vh;">
+            
+            <!-- Conteúdo Institucional Totalmente Centralizado (Sem o Card de Vídeo da Direita) -->
+            <div class="hero-content" style="text-align: center; max-width: 850px; margin: 0 auto; padding: 2rem 0;">
+                <div class="hero-logos" style="display: flex; gap: 1.5rem; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                    <img src="assets/Logo_IPT.png" alt="Logo IPT" style="max-height: 55px; width: auto;">
+                </div>
+                
+                <h1 style="font-size: 3.5rem; line-height: 1.2; margin-bottom: 1.5rem; font-weight: 800;">
+                    Laboratório de Usos Finais e <br><span class="text-gradient">Gestão de Energia</span>
+                </h1>
+                
+                <h2 style="font-size: 1.5rem; font-weight: 400; color: var(--text-secondary, #94a3b8); margin-bottom: 1.5rem;">
+                    Ensaios, Desenvolvimento Tecnológico e Soluções para a Indústria
+                </h2>
+                
+                <p class="hero-complement" style="font-size: 1rem; color: #00f0ff; font-weight: 500; margin-bottom: 2.5rem; letter-spacing: 0.5px; max-width: 750px; margin-left: auto; margin-right: auto;">
+                    Compatibilidade Eletromagnética • Fotometria • Equipamentos Eletromédicos • Materiais Elétricos • Sistemas de Energia
+                </p>
+                
+                <div class="hero-buttons" style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="#sobre" class="btn btn-primary">Conheça o LGE</a>
+                    <a href="#servicos" class="btn btn-secondary">Nossas Áreas de Atuação</a>
+                </div>
             </div>
+            
         </div>
     </section>
 
+    <div class="ticker-bar" style="background: linear-gradient(90deg, #0f172a, #1e293b); border-top: 1px solid rgba(56, 189, 248, 0.2); border-bottom: 1px solid rgba(56, 189, 248, 0.2); padding: 1rem 0;">
+        <div class="container text-center">
+            <p style="margin: 0; font-size: 1.1rem; font-weight: 600; letter-spacing: 1px; color: var(--text-primary, #ffffff); text-transform: uppercase;">
+                Pesquisa Aplicada, Desenvolvimento Tecnológico e Inovação
+            </p>
+        </div>
+    </div>
+
     <section id="sobre" class="section sobre">
-        <div class="container grid-2">
-            <div class="sobre-text">
-                <h2 class="section-title">Desenvolvimento & <span class="text-cyan">Capacidade Técnica</span></h2>
-                <p>O <strong>Instituto de Pesquisas Tecnológicas (IPT)</strong> atua na vanguarda científica oferecendo infraestrutura laboratorial e suporte especializado por meio do <strong>Laboratório de Usos Finais e Gestão de Energia</strong> nas áreas de Compatibilidade Eletromagnética (EMC) e Sistemas de Potência.</p>
-                <p>Nuestra missão é impulsionar a inovação industrial e o desenvolvimento tecnológico nacional, fornecendo ensaios laboratoriais diagnósticos avançados que auxiliam indústrias e centros parceiros desde a etapa conceitual até a validação para o mercado global.</p>
-                <div class="inmetro-badge">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-cyan"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    <div>
-                        <h4>Laboratório Certificado Inmetro</h4>
-                        <p>Ensaios rastreáveis alinhados aos mais rígidos critérios internacionais de qualidade e precisão ISO/IEC 17025.</p>
+        <div class="container" style="display: flex; flex-direction: column; gap: 4rem;">
+            
+            <div class="text-center" style="margin-bottom: 1rem;">
+                <h2 class="section-title">Credibilidade & <span class="text-cyan">Competência Técnica</span></h2>
+            </div>
+
+            <div class="grid-2" style="align-items: center; gap: 3rem;">
+                <div class="sobre-img-wrapper" style="border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+                    <img src="assets/iptentrada.png" alt="Instituto de Pesquisas Tecnológicas - IPT" style="width: 100%; height: auto; display: block; background-color: #1e293b; min-height: 250px;">
+                </div>
+                <div class="sobre-text">
+                    <span style="color: #38bdf8; text-transform: uppercase; font-size: 0.85rem; font-weight: 700; letter-spacing: 1.5px;">Instituição</span>
+                    <h3 style="font-size: 2rem; margin-top: 0.5rem; margin-bottom: 1rem; color: #fff;">O Instituto de Pesquisas Tecnológicas</h3>
+                    <p style="font-size: 1.05rem; line-height: 1.6;">O <strong>Instituto de Pesquisas Tecnológicas (IPT)</strong> é um dos principais centros de pesquisa, desenvolvimento e inovação do Brasil, atuando no apoio à indústria, governo e sociedade por meio de serviços tecnológicos, ensaios laboratoriais e projetos de pesquisa aplicada.</p>
+                </div>
+            </div>
+
+            <div class="grid-2" style="align-items: center; gap: 3rem;">
+                <div class="sobre-text" style="order: 2;">
+                    <span style="color: #38bdf8; text-transform: uppercase; font-size: 0.85rem; font-weight: 700; letter-spacing: 1.5px;">Centro Tecnológico</span>
+                    <h3 style="font-size: 2rem; margin-top: 0.5rem; margin-bottom: 1rem; color: #fff;">O Laboratório de Usos Finais e Gestão de Energia</h3>
+                    <p style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.5rem;">O <strong>Laboratório de Usos Finais e Gestão de Energia (LGE)</strong> O LGE apoia a indústria com ensaios, homologação, desenvolvimento tecnológico e projetos de inovação.
+                         Atuamos em áreas como sistemas de energia, eficiência energética, transição energética, 
+                         equipamentos industriais, fotovoltaicos e compatibilidade eletromagnética, 
+                         contribuindo para o desenvolvimento de soluções mais seguras, eficientes e competitivas.
+                        </p>
+                    
+                    <div class="badges-container" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem;">
+                        <span class="badge" style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); color: #38bdf8; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;">Compatibilidade Eletromagnética</span>
+                        <span class="badge" style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); color: #38bdf8; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;">Fotometria</span>
+                        <span class="badge" style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); color: #38bdf8; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;">Equipamentos Eletromédicos</span>
+                        <span class="badge" style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); color: #38bdf8; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;">Materiais Elétricos</span>
+                        <span class="badge" style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); color: #38bdf8; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;">Sistemas de Energia</span>
+                        <span class="badge" style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); color: #38bdf8; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;">Transição energética</span>
                     </div>
                 </div>
-            </div>
-            <div class="sobre-stats">
-                <div class="stat-card">
-                    <h3>+150</h3>
-                    <p>Normas Internacionais Suportadas</p>
-                </div>
-                <div class="stat-card">
-                    <h3>100%</h3>
-                    <p>Rastreabilidade e Confiabilidade</p>
-                </div>
-                <div class="stat-card">
-                    <h3>&lt; 0.1%</h3>
-                    <p>Margem de Incerteza de Medição</p>
-                </div>
-                <div class="stat-card">
-                    <h3>24/7</h3>
-                    <p>Monitoramento e Aquisição de Dados</p>
+                <div class="sobre-img-wrapper" style="order: 1; border-radius: 12px; overflow: hidden; border: 1px solid rgba(56, 189, 248, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                    <img src="assets/laboratorio_real_lge.jpg" alt="Infraestrutura do Laboratório LGE" style="width: 100%; height: auto; display: block; background-color: #1e293b; min-height: 250px;">
                 </div>
             </div>
+
+            <div class="inmetro-badge-wrapper" style="margin-top: 2rem; padding: 1.5rem; background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px;">
+            <div class="inmetro-badge" style="display: flex; gap: 1.5rem; align-items: center; justify-content: space-between;">
+                
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-cyan" style="flex-shrink: 0;">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    <div>
+                        <h4 style="color: #fff; margin: 0 0 0.25rem 0;">Laboratório Certificado Inmetro</h4>
+                        <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4;">
+                            Ensaios rastreáveis alinhados aos mais rígidos critérios internacionais de qualidade e precisão ISO/IEC 17025.
+                        </p>
+                    </div>
+                </div>
+
+                <div style="flex-shrink: 0; margin-left: 1rem;">
+                    <img src="assets/inmetro.png" alt="Certificação Inmetro" style="height: 35px; width: auto; display: block;">
+                </div>
+
+            </div>
+        </div>
+
         </div>
     </section>
 
@@ -171,7 +230,7 @@
         <div class="container">
             <div class="parcerias-wrapper">
                 <h2 class="section-title">Pesquisa, Desenvolvimento & <span class="text-cyan">Inovação</span></h2>
-                <p>Apoiamos o ecossistema tecnológico e o parque industrial. Convidamos indústrias, startups e centros de excelência acadêmica para o codesenvolvimento científico de projetos estruturados em inovação aberta.</p>
+                <p>Apoiamos o ecossistema tecnológico e o parque industrial. Convidamos indústrias, startups e centers de excelência acadêmica para o codesenvolvimento científico de projetos estruturados em inovação aberta.</p>
                 <p>Disponibilizamos o corpo técnico do IPT para acelerar rotas tecnológicas complexas e ensaios experimentais sob medida.</p>
                 <a href="#contato" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-block;">Iniciar Projeto Conjunto</a>
             </div>
@@ -224,7 +283,7 @@
             <p class="footer-secondary-text">Laboratório de Usos Finais e Gestão de Energia</p>
             <p style="font-size: 0.75rem; color: #475569; margin-top: 1.5rem;">&copy; 2026 IPT. Todos os direitos reservados. Ensaios Tecnológicos e Conformidade Industrial.</p>
         </div>
-    </footer >
+    </footer>
 
     <div id="infra-modal" class="modal">
         <div class="modal-content">
