@@ -195,6 +195,86 @@ a { text-decoration: none; }
 /* ==========================================================================
    HERO — carrossel CSS + dot-grid animado
    ========================================================================== */
+/* HERO CENTRALIZAÇÃO CORRIGIDA */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding-top: 72px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 4;
+    max-width: 900px;
+    padding: 0 2rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* LOGO CENTRAL NO HERO */
+.hero-logo {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-logo img {
+    height: 70px;
+    filter: drop-shadow(0 0 20px rgba(0,240,255,0.25));
+}
+
+/* MELHORIA TÍTULO */
+.hero h1 {
+    text-align: center;
+}
+
+/* SUBTITLE CENTRAL */
+.hero-subtitle {
+    text-align: center;
+}
+
+/* TAGS CENTRAL */
+.hero-tags {
+    justify-content: center;
+}
+
+/* BOTÕES CENTRAL */
+.hero-buttons {
+    justify-content: center;
+}
+
+/* FUNDO MAIS SUAVE (LAB PREMIUM) */
+.hero-overlay {
+    background:
+        linear-gradient(to bottom, rgba(5, 8, 17, 0.92) 0%, rgba(5, 8, 17, 0.75) 50%, rgba(5, 8, 17, 0.92) 100%),
+        radial-gradient(circle at 50% 30%, rgba(0, 82, 204, 0.15) 0%, transparent 60%);
+}
+
+/* AJUSTE GRID VISUAL HERO */
+.hero-dot-grid {
+    opacity: 0.35;
+}
+
+/* RESPONSIVO HERO */
+@media (max-width: 768px) {
+    .hero-logo img {
+        height: 52px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+
 .hero {
     position: relative;
     height: 100vh;
