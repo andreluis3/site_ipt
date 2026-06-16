@@ -707,6 +707,160 @@ a { text-decoration: none; }
     line-height: 1.7;
 }
 
+/* ==========================================================
+   SERVIÇOS PREMIUM V2
+========================================================== */
+
+.services-premium-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:2rem;
+}
+
+.service-premium-card{
+    position:relative;
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(8,18,35,0.95),
+            rgba(10,25,50,0.95)
+        );
+
+    border:1px solid rgba(56,189,248,.15);
+    border-radius:22px;
+
+    backdrop-filter:blur(16px);
+
+    transition:.4s ease;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.35),
+        0 0 0 rgba(0,240,255,0);
+}
+
+/* glow lateral */
+
+.service-premium-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:4px;
+    height:100%;
+
+    background:linear-gradient(
+        180deg,
+        #00f0ff,
+        #0066ff
+    );
+}
+
+/* efeito steam */
+
+.service-premium-card::after{
+    content:"";
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    top:-120px;
+    right:-120px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,240,255,.12),
+            transparent 70%
+        );
+
+    pointer-events:none;
+}
+
+.service-premium-card:hover{
+    transform:translateY(-8px);
+
+    border-color:rgba(0,240,255,.35);
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,.45),
+        0 0 40px rgba(0,240,255,.15);
+}
+
+.service-image{
+    height:220px;
+    overflow:hidden;
+    position:relative;
+}
+
+.service-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:transform .8s ease;
+}
+
+.service-premium-card:hover .service-image img{
+    transform:scale(1.08);
+}
+
+.service-content{
+    padding:2rem;
+}
+
+.service-badge{
+    display:inline-block;
+
+    padding:.35rem .9rem;
+
+    border-radius:999px;
+
+    background:rgba(0,240,255,.08);
+
+    border:1px solid rgba(0,240,255,.2);
+
+    color:var(--cyan);
+
+    font-size:.75rem;
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    margin-bottom:1rem;
+}
+
+.service-content h3{
+    color:#fff;
+    font-size:1.35rem;
+    line-height:1.3;
+
+    margin-bottom:1rem;
+}
+
+.service-content p{
+    color:#b6c4d4;
+    line-height:1.8;
+    font-size:.95rem;
+}
+
+/* responsivo */
+
+@media(max-width:768px){
+
+    .services-premium-grid{
+        grid-template-columns:1fr;
+    }
+
+    .service-image{
+        height:190px;
+    }
+
+}
+
 /* ==========================================================================
    SEÇÃO INFRAESTRUTURA — showcase premium
    ========================================================================== */
