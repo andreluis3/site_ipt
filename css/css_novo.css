@@ -1,0 +1,163 @@
+/* ================= ESTILOS DO REDESIGN FUTURISTA (GLASSMORPHISM) ================= */
+
+/* Definições de Cores Base caso não existam no seu projeto */
+:root {
+    --neon-cyan: #00f2ff;
+    --neon-blue: #0066ff;
+    --dark-bg: #020617;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(0, 242, 255, 0.15);
+}
+
+/* Card Geral com efeito de Vidro */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(0, 242, 255, 0.05);
+}
+
+/* Destaque do Sistema de Telemetria */
+.telemetria-highlight {
+    background: rgba(0, 242, 255, 0.05);
+    border-left: 3px solid var(--neon-cyan);
+    padding: 15px;
+    border-radius: 4px 12px 12px 4px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+}
+
+.telemetria-highlight p {
+    font-size: 0.95rem;
+    color: #e2e8f0;
+    margin: 0;
+}
+
+/* Ícone pulsante para dar ideia de transmissão em tempo real */
+.pulse-icon {
+    width: 10px;
+    height: 10px;
+    background-color: var(--neon-cyan);
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 0 rgba(0, 242, 255, 0.7);
+    animation: pulseTelemetry 1.6s infinite;
+}
+
+@keyframes pulseTelemetry {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 242, 255, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(0, 242, 255, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 242, 255, 0); }
+}
+
+/* Botão Consultar Capacidades */
+.btn-consultar {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 1px solid var(--neon-cyan);
+    color: #fff;
+    text-shadow: 0 0 5px var(--neon-cyan);
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 30px;
+}
+
+.btn-consultar:hover {
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-blue));
+    color: #000;
+    text-shadow: none;
+    box-shadow: 0 0 20px var(--neon-cyan);
+    transform: translateY(-2px);
+}
+
+/* Nova Grid para a seção de Mercados Atendidos */
+.mercados-grid-futurista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+    padding: 10px;
+}
+
+/* Card individual dos mercados com efeito Glass */
+.mercado-card-glass {
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    height: 280px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.mercado-card-glass:hover {
+    transform: translateY(-8px);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 15px 30px rgba(0, 242, 255, 0.15);
+}
+
+/* Container que força as imagens a manterem a proporção correta */
+.card-img-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem cobrir o espaço sem distorcer */
+    transition: transform 0.5s ease;
+    filter: brightness(0.65) contrast(1.1); /* Deixa a imagem mais integrada ao tema escuro */
+}
+
+.mercado-card-glass:hover .card-img-container img {
+    transform: scale(1.08);
+    filter: brightness(0.8) contrast(1.2);
+}
+
+/* Rodapé flutuante em vidro transparente com o texto do setor */
+.card-glass-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(2, 6, 23, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.mercado-card-glass:hover .card-glass-footer {
+    background: rgba(0, 102, 255, 0.25);
+    border-top-color: var(--neon-cyan);
+}
+
+.card-glass-footer h4 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.mercado-card-glass:hover .card-glass-footer h4 {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px rgba(0, 242, 255, 0.6);
+}

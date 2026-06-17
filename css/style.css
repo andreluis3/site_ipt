@@ -1083,7 +1083,97 @@ a { text-decoration: none; }
     color: var(--text-secondary);
     margin-bottom: 1.25rem;
     font-size: 0.95rem;
+}.normas-highlight{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:2rem;
+    margin-bottom:4rem;
 }
+
+.highlight-card{
+    background:linear-gradient(
+        145deg,
+        rgba(8,18,35,.95),
+        rgba(10,25,50,.95)
+    );
+
+    border:1px solid rgba(0,240,255,.12);
+    border-radius:20px;
+
+    padding:2rem;
+
+    transition:.35s;
+}
+
+.highlight-card:hover{
+    transform:translateY(-8px);
+
+    border-color:rgba(0,240,255,.3);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.35),
+    0 0 30px rgba(0,240,255,.12);
+}
+
+.highlight-number{
+    font-size:2rem;
+    font-weight:800;
+    color:var(--cyan);
+}
+
+.normas-modern-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1.5rem;
+}
+
+.norma-modern-card{
+    background:rgba(10,22,40,.75);
+
+    border:1px solid rgba(56,189,248,.12);
+
+    border-radius:18px;
+
+    padding:1.8rem;
+
+    text-align:center;
+
+    transition:.35s;
+}
+
+.norma-modern-card:hover{
+    transform:translateY(-5px);
+
+    border-color:rgba(0,240,255,.25);
+
+    box-shadow:
+    0 0 25px rgba(0,240,255,.08);
+}
+
+.norma-modern-card h4{
+    color:var(--cyan);
+    font-size:1.2rem;
+    margin-bottom:.75rem;
+}
+
+.norma-modern-card p{
+    color:var(--text-secondary);
+    line-height:1.6;
+}
+
+@media(max-width:768px){
+
+    .normas-highlight{
+        grid-template-columns:1fr;
+    }
+
+    .normas-modern-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
 
 /* ==========================================================================
    SEÇÃO MERCADOS ATENDIDOS
@@ -1139,6 +1229,176 @@ a { text-decoration: none; }
 }
 .mercado-card.featured .m-text h4 { font-size: 1.05rem; margin-bottom: 0.3rem; }
 .mercado-card.featured .m-text p  { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; }
+
+.mercados-visual-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:2rem;
+}
+
+.mercado-visual-card{
+    position:relative;
+    height:340px;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    border:1px solid rgba(0,240,255,.15);
+
+    background:#081322;
+
+    transition:.45s ease;
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.35);
+}
+
+.mercado-visual-card:hover{
+    transform:translateY(-10px);
+
+    border-color:rgba(0,240,255,.35);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.45),
+    0 0 30px rgba(0,240,255,.15);
+}
+
+.mercado-visual-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:1s;
+}
+
+.mercado-visual-card:hover img{
+    transform:scale(1.08);
+}
+
+.mercado-overlay{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    padding:2rem;
+
+    background:
+    linear-gradient(
+        to top,
+        rgba(5,8,17,.95),
+        rgba(5,8,17,.45),
+        transparent
+    );
+}
+
+.mercado-overlay::before{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(0,240,255,.08),
+        transparent 50%
+    );
+
+    pointer-events:none;
+}
+
+.mercado-overlay h3{
+    color:#fff;
+    font-size:1.4rem;
+    font-weight:700;
+
+    margin-bottom:.5rem;
+
+    position:relative;
+    z-index:2;
+}
+
+.mercado-overlay p{
+    color:#cbd5e1;
+    line-height:1.6;
+
+    position:relative;
+    z-index:2;
+}
+
+@media(max-width:768px){
+
+    .mercados-visual-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+.inmetro-badge-wrapper{
+    margin-top: 3rem;
+    padding: 2rem;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,82,204,.18),
+            rgba(0,240,255,.05)
+        );
+
+    border:1px solid rgba(0,240,255,.18);
+
+    backdrop-filter: blur(12px);
+
+    display:flex;
+    align-items:center;
+    gap:1.5rem;
+
+    box-shadow:
+        0 0 40px rgba(0,240,255,.05);
+}
+
+.inmetro-badge-icon{
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:2rem;
+
+    background:rgba(0,240,255,.08);
+
+    border:1px solid rgba(0,240,255,.2);
+
+    flex-shrink:0;
+}
+
+.inmetro-label{
+    display:inline-block;
+
+    color:var(--cyan);
+
+    font-size:.75rem;
+
+    font-weight:700;
+
+    letter-spacing:.15em;
+
+    margin-bottom:.5rem;
+}
+
+.inmetro-badge-content h4{
+    color:#fff;
+    margin-bottom:.5rem;
+}
 
 /* ==========================================================================
    SEÇÃO PARCERIAS / P&D&I
@@ -1425,4 +1685,196 @@ a { text-decoration: none; }
     .hero-slide,
     .hero-scanline { animation: none; }
     .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+.inmetro-badge-wrapper{
+    margin-top: 3rem;
+    padding: 2rem;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,82,204,.18),
+            rgba(0,240,255,.05)
+        );
+
+    border:1px solid rgba(0,240,255,.18);
+
+    backdrop-filter: blur(12px);
+
+    display:flex;
+    align-items:center;
+    gap:1.5rem;
+
+    box-shadow:
+        0 0 40px rgba(0,240,255,.05);
+}
+
+.inmetro-badge-icon{
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:2rem;
+
+    background:rgba(0,240,255,.08);
+
+    border:1px solid rgba(0,240,255,.2);
+
+    flex-shrink:0;
+}
+
+.inmetro-label{
+    display:inline-block;
+
+    color:var(--cyan);
+
+    font-size:.75rem;
+
+    font-weight:700;
+
+    letter-spacing:.15em;
+
+    margin-bottom:.5rem;
+}
+
+.inmetro-badge-content h4{
+    color:#fff;
+    margin-bottom:.5rem;
+}
+
+/* ================= IMPACTO ================= */
+
+.impact-stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1.5rem;
+    margin-bottom:3rem;
+}
+
+.impact-stat-card{
+    background:linear-gradient(
+        145deg,
+        rgba(12,25,45,.95),
+        rgba(5,12,25,.95)
+    );
+    border:1px solid rgba(0,240,255,.12);
+    border-radius:18px;
+    padding:2rem;
+    text-align:center;
+    backdrop-filter:blur(14px);
+    transition:.35s;
+}
+
+.impact-stat-card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(0,240,255,.4);
+    box-shadow:
+    0 0 30px rgba(0,240,255,.12),
+    0 0 80px rgba(0,82,204,.08);
+}
+
+.impact-number{
+    font-size:2.6rem;
+    font-weight:800;
+    color:var(--cyan);
+    margin-bottom:.5rem;
+}
+
+.impact-label{
+    color:var(--text-secondary);
+    font-size:.9rem;
+}
+
+.impact-showcase{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1.5rem;
+    margin-bottom:3rem;
+}
+
+.impact-card-large{
+    background:
+    linear-gradient(
+        135deg,
+        rgba(0,82,204,.12),
+        rgba(8,18,35,.95)
+    );
+
+    border:1px solid rgba(0,240,255,.12);
+    border-radius:20px;
+    padding:2.2rem;
+    position:relative;
+    overflow:hidden;
+}
+
+.impact-card-large::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:2px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        var(--cyan),
+        transparent
+    );
+}
+
+.impact-card-large h3{
+    color:#fff;
+    margin-bottom:1rem;
+    font-size:1.3rem;
+}
+
+.impact-card-large p{
+    color:var(--text-secondary);
+    line-height:1.8;
+}
+
+.impact-banner{
+    text-align:center;
+    padding:3rem;
+    border-radius:24px;
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(0,82,204,.25),
+        rgba(5,8,17,.95)
+    );
+
+    border:1px solid rgba(0,240,255,.18);
+}
+
+.impact-banner h3{
+    font-size:1.8rem;
+    color:#fff;
+    margin-bottom:1rem;
+}
+
+.impact-banner p{
+    color:var(--text-secondary);
+    max-width:700px;
+    margin:0 auto 2rem auto;
+}
+
+@media(max-width:768px){
+
+    .impact-stats-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .impact-showcase{
+        grid-template-columns:1fr;
+    }
+
 }
