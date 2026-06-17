@@ -237,49 +237,87 @@
             </div>
         </div>
     </section>
+<section id="infraestrutura" class="section infraestrutura">
+    <div class="container">
 
-    <section id="infraestrutura" class="section infraestrutura bg-dark">
-        <div class="container">
-            <div class="text-center" style="margin-bottom: 3rem;">
-                <h2 class="section-title">Conheça nossa <span class="text-cyan">Infraestrutura</span></h2>
-                <p class="section-subtitle">Ambientes de testes controlados e instrumentação de alta performance para diagnósticos metrológicos de extrema precisão.</p>
-            </div>
-
-            <div class="infra-mosaic-container">
-                
-                <div class="infra-video-card">
-                    <span class="infra-badge">📡 Infraestrutura Real IPT</span>
-                    <video autoplay muted loop playsinline class="infra-video-element">
-                        <source src="assets/videocamera.mp4" type="video/mp4">
-                        Seu navegador não suporta a tag de vídeo.
-                    </video>
-                    <div class="video-overlay">
-                        <h3>Câmara Anecoica</h3>
-                        <p>Ensaios de Emissão, Imunidade e Compatibilidade Eletromagnética</p>
-                    </div>
-                </div>
-
-                <div class="infra-subgrid">
-                    
-                    <div class="infra-coming-soon">
-                        <div class="coming-soon-icon">💡</div>
-                        <h3>Fotometria</h3>
-                        <p class="coming-soon-status">Vídeo institucional em breve</p>
-                        <div class="coming-soon-glow"></div>
-                    </div>
-
-                    <div class="infra-coming-soon">
-                        <div class="coming-soon-icon">⚡</div>
-                        <h3>Materiais Elétricos</h3>
-                        <p class="coming-soon-status">Vídeo institucional em breve</p>
-                        <div class="coming-soon-glow"></div>
-                    </div>
-
-                </div>
-
-            </div>
+        <div class="text-center" style="margin-bottom: 5rem;">
+            <h2 class="section-title">Infraestrutura <span class="text-cyan">Tecnológica</span></h2>
         </div>
-    </section>
+
+        <div class="sobre-split-container">
+            
+            <div class="sobre-text-side">
+                <div class="sobre-block-content">
+                    <span class="tech-mini-label">CAPACIDADE LAB</span>
+                    <h3>Ambientes de Alta Tecnologia</h3>
+                    <p>
+                        Nossa infraestrutura laboratorial conta com equipamentos de última geração 
+                        e ambientes controlados para simular condições extremas de operação. Garantimos 
+                        precisão analítica rigorosa para atender às exigências normativas nacionais 
+                        e internacionais, impulsionando a confiabilidade do seu produto.
+                    </p>
+                </div>
+
+                <div class="sobre-block-content" style="margin-top: 2.5rem;">
+                    <span class="tech-mini-label">MONITORAMENTO RADAR</span>
+                    <h3>Simulação em Tempo Real</h3>
+                    <p>
+                        Navegue ao lado através do nosso centro de mídia para inspecionar visualmente 
+                        o funcionamento operacional de cada núcleo de ensaio do laboratório LGE.
+                    </p>
+                </div>
+            </div>
+
+            <div class="sobre-gallery-side">
+                
+                <div class="infra-main-display" style="background: #020508;">
+                    
+                    <video id="mainVideoPlayer" class="infra-video-element" autoplay muted loop playsinline 
+                           style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; z-index: 1;">
+                        <source id="videoSource" src="assets/videocamera.mp4" type="video/mp4">
+                    </video>
+
+                    <div class="infra-main-overlay">
+                        <div class="scanline"></div>
+                        <span class="live-indicator"><span class="ping-dot"></span> VÍDEO FEED</span>
+                        <h3 id="mainVideoTitle">Câmara Anecoica</h3>
+                        <p id="mainVideoTag">Ensaios EMC / Compatibilidade</p>
+                    </div>
+                </div>
+
+                <div class="infra-thumbnails-grid">
+                    
+                    <div class="infra-thumb active" 
+                         style="background-image: url('assets/camaraanecoica.jpg');"
+                         onclick="switchVideo(this, 'assets/videocamera.mp4', 'Câmara Anecoica', 'Ensaios EMC / Compatibilidade')">
+                        <div class="thumb-blur-cover"></div>
+                        <div class="video-play-indicator"></div>
+                        <span>Câmara Anecoica</span>
+                    </div>
+
+                    <div class="infra-thumb" 
+                         style="background-image: url('assets/gonio.jpg');"
+                         onclick="switchVideo(this, 'assets/videogonio.mp4', 'Fotometria', 'Ensaios Ópticos e Radiométricos')">
+                        <div class="thumb-blur-cover"></div>
+                        <div class="video-play-indicator"></div>
+                        <span>Fotometria</span>
+                    </div>
+
+                    <div class="infra-thumb" 
+                         style="background-image: url('assets/aplicador.jpg');"
+                         onclick="switchVideo(this, 'assets/videoaplicador.mp4', 'Materiais', 'Ensaios Físicos e Estruturais')">
+                        <div class="thumb-blur-cover"></div>
+                        <div class="video-play-indicator"></div>
+                        <span>Materiais</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
 
     <section id="normas" class="section normas bg-darker">
         <div class="container">

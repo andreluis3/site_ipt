@@ -1,0 +1,35 @@
+<div class="impact-showcase">
+
+    <div class="impact-card-large">
+        <div class="card-icon-wrap" style="margin-bottom: 1.5rem;">
+            <i class="fas fa-wave-square"></i> </div>
+        <span class="service-badge" style="margin-bottom: 0.5rem; display: inline-block;">EMC</span>
+        <h3>Compatibilidade Eletromagnética</h3>
+        <p>Ensaios de emissão conduzida, emissão irradiada, imunidade a transientes e validação de desempenho para garantir que dispositivos operem em total conformidade técnica com o ecossistema eletromagnético.</p>
+    </div>
+
+    <div class="impact-card-large">
+        <div class="card-icon-wrap" style="margin-bottom: 1.5rem;">
+            <i class="fas fa-charging-station"></i> </div>
+        <span class="service-badge" style="margin-bottom: 0.5rem; display: inline-block;">ENERGIA</span>
+        <h3>Sistemas de Energia</h3>
+        <p>Análise de qualidade de energia, ensaios de afundamento de tensão, surtos, eficiência energética e simulação de redes elétricas complexas para aplicações industriais.</p>
+    </div>
+
+    <div class="impact-card-large">
+        <div class="card-icon-wrap" style="margin-bottom: 1.5rem;">
+            <i class="fas fa-certificate"></i> </div>
+        <span class="service-badge" style="margin-bottom: 0.5rem; display: inline-block;">CERTIFICAÇÃO</span>
+        <h3>Homologação e Desenvolvimento de Produtos</h3>
+        <p>Apoio à indústria na superação de barreiras regulatórias, fornecendo relatórios oficiais de ensaios laboratoriais, validações técnicas e suporte ao processo de homologação.</p>
+    </div>
+
+    <div class="impact-card-large">
+        <div class="card-icon-wrap" style="margin-bottom: 1.5rem;">
+            <i class="fas fa-lightbulb"></i> </div>
+        <span class="service-badge" style="margin-bottom: 0.5rem; display: inline-block;">P&D</span>
+        <h3>Projetos e Consultoria</h3>
+        <p>Desenvolvimento científico e tecnológico sob demanda, engenharia reversa, análise de falhas e consultoria especializada para inovação em produtos e processos.</p>
+    </div>
+
+</div>

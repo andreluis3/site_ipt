@@ -85,81 +85,99 @@
     </div>
 </div>
 
-<!-- ================= SOBRE ================= -->
-<section id="sobre" class="section sobre">
+<section id="quem-somos" class="section sobre">
     <div class="container">
-
-        <div class="text-center">
-            <h2 class="section-title">
-                Credibilidade & <span class="text-cyan">Competência Técnica</span>
-            </h2>
+        
+        <div class="text-center" style="margin-bottom: 5rem;">
+            <h2 class="section-title">Credibilidade & <span class="text-cyan">Competência Técnica</span></h2>
         </div>
 
-        <div class="grid-2">
-            <div class="sobre-img-wrapper">
-                <img src="assets/iptentrada.png" alt="IPT">
-            </div>
+        <div class="sobre-split-container">
+            
+            <div class="sobre-text-side">
+                <div class="sobre-block-content">
+                    <span class="tech-mini-label">INSTITUIÇÃO</span>
+                    <h3>Instituto de Pesquisas Tecnológicas</h3>
+                    <p>
+                        O Instituto de Pesquisas Tecnológicas (IPT) é um dos principais centros 
+                        de pesquisa, desenvolvimento e inovação do Brasil, atuando no apoio à 
+                        indústria, governo e sociedade por meio de serviços tecnológicos, 
+                        ensaios laboratoriais e projetos de pesquisa aplicada.
+                    </p>
+                </div>
 
-            <div class="sobre-text">
-                <span class="section-label">Instituição</span>
-                <h3>Instituto de Pesquisas Tecnológicas</h3>
-                <p>
-                    O Instituto de Pesquisas Tecnológicas (IPT) é um dos principais centros de pesquisa,
-                    desenvolvimento e inovação do Brasil.
-                </p>
-            </div>
-        </div>
-
-        <div class="grid-2">
-
-            <div class="sobre-text">
-                <span class="section-label">Centro Tecnológico</span>
-                <h3>Laboratório LGE</h3>
-                <p>
-                    O LGE apoia a indústria com ensaios, homologação e desenvolvimento tecnológico
-                    em sistemas de energia e compatibilidade eletromagnética.
-                </p>
-
-                <div class="badge-row">
-                    <span class="tag-badge">EMC</span>
-                    <span class="tag-badge">Fotometria</span>
-                    <span class="tag-badge">Energia</span>
-                    <span class="tag-badge">Materiais</span>
+                <div class="sobre-block-content" style="margin-top: 2.5rem;">
+                    <span class="tech-mini-label">CENTRO TECNOLÓGICO</span>
+                    <h3>Laboratório LGE</h3>
+                    <p>
+                        O Laboratório de Usos Finais e Gestão de Energia (LGE) apoia a 
+                        indústria com ensaios, homologação, desenvolvimento tecnológico e 
+                        projetos de inovação. Atuamos em áreas como sistemas de energia, 
+                        eficiência energética, transição energética, equipamentos industriais, 
+                        fotovoltaicos e compatibilidade eletromagnética, contribuindo para o 
+                        desenvolvimento de soluções mais seguras, eficientes e competitivas.
+                    </p>
+                    
+                    <div class="tech-badges-container">
+                        <span class="tech-tag-btn">Compatibilidade Eletromagnética</span>
+                        <span class="tech-tag-btn">Fotometria</span>
+                        <span class="tech-tag-btn">Equipamentos Eletromédicos</span>
+                        <span class="tech-tag-btn">Materiais Elétricos</span>
+                        <span class="tech-tag-btn">Sistemas de Energia</span>
+                        <span class="tech-tag-btn">Transição energética</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="infra-grid">
-
-                <div class="infra-item infra-main"
-                    style="background-image:url('assets/camaraanecoica.jpg')">
-                    <div class="infra-overlay">
-                        <h3>Câmara Anecoica</h3>
-                        <p>EMC</p>
+            <div class="sobre-gallery-side">
+                
+                <div class="infra-main-display" id="mainDisplay" style="background-image: url('assets/iptentrada.png');">
+                    <div class="infra-main-overlay">
+                        <div class="scanline"></div>
+                        <span class="live-indicator"><span class="ping-dot"></span> VISUALIZADOR ATIVO</span>
+                        <h3 id="mainDisplayTitle">Instituto de Pesquisas Tecnológicas</h3>
+                        <p id="mainDisplayTag">Sede Central / Campus IPT</p>
                     </div>
                 </div>
 
-                <div class="infra-item"
-                    style="background-image:url('assets/gonio.jpg')">
-                    <div class="infra-overlay">
-                        <h3>Fotometria</h3>
+                <div class="infra-thumbnails-grid m-4-cols">
+                    
+                    <div class="infra-thumb active" 
+                         style="background-image: url('assets/iptentrada.png');"
+                         onclick="switchGallery(this, 'Instituto de Pesquisas Tecnológicas', 'Sede Central / Campus IPT')">
+                        <div class="thumb-blur-cover"></div>
+                        <span>IPT Entrada</span>
                     </div>
-                </div>
-
-                <div class="infra-item"
-                    style="background-image:url('assets/aplicador.jpg')">
-                    <div class="infra-overlay">
-                        <h3>Materiais</h3>
+                    
+                    <div class="infra-thumb" 
+                         style="background-image: url('assets/camaraanecoica.jpg');"
+                         onclick="switchGallery(this, 'Câmara Anecoica', 'EMC')">
+                        <div class="thumb-blur-cover"></div>
+                        <span>Câmara Anecoica</span>
                     </div>
+
+                    <div class="infra-thumb" 
+                         style="background-image: url('assets/gonio.jpg');"
+                         onclick="switchGallery(this, 'Fotometria', 'Ensaios Ópticos')">
+                        <div class="thumb-blur-cover"></div>
+                        <span>Fotometria</span>
+                    </div>
+
+                    <div class="infra-thumb" 
+                         style="background-image: url('assets/aplicador.jpg');"
+                         onclick="switchGallery(this, 'Materiais', 'Isolamento e Segurança')">
+                        <div class="thumb-blur-cover"></div>
+                        <span>Materiais</span>
+                    </div>
+
                 </div>
-
-               
-
             </div>
 
         </div>
-
     </div>
 </section>
+
+
 <!-- ================= SERVIÇOS ================= -->
 <section id="servicos" class="section servicos">
     <div class="container">
@@ -178,17 +196,15 @@
 
         <div class="services-premium-grid">
 
-            <!-- EMC -->
             <div class="service-premium-card">
-                <div class="service-image">
-                    <img src="assets/compatibilidadeicone.png" alt="Compatibilidade Eletromagnética">
+                <div class="service-icon-box">
+                    <div class="tech-icon-wrapper">
+                        <i data-lucide="shield-alert" class="tech-vector-icon"></i>
+                    </div>
                 </div>
-
                 <div class="service-content">
                     <span class="service-badge">EMC</span>
-
                     <h3>Compatibilidade Eletromagnética</h3>
-
                     <p>
                         Ensaios de emissão conduzida, emissão irradiada,
                         imunidade a transientes e validação de desempenho
@@ -198,17 +214,30 @@
                 </div>
             </div>
 
-            <!-- Energia -->
             <div class="service-premium-card">
-                <div class="service-image">
-                    <img src="assets/energia.png" alt="Sistemas de Energia">
+                <div class="service-icon-box">
+                    <div class="tech-icon-wrapper">
+                        <i data-lucide="aperture" class="tech-vector-icon"></i>
+                    </div>
                 </div>
+                <div class="service-content">
+                    <span class="service-badge">FOTOMETRIA</span>
+                    <h3>Fotometria</h3>
+                    <p>
+                        Ensaios de medição do feixe de luz e etc.
+                    </p>
+                </div>
+            </div>
 
+            <div class="service-premium-card">
+                <div class="service-icon-box">
+                    <div class="tech-icon-wrapper">
+                        <i data-lucide="zap" class="tech-vector-icon"></i>
+                    </div>
+                </div>
                 <div class="service-content">
                     <span class="service-badge">ENERGIA</span>
-
                     <h3>Sistemas de Energia</h3>
-
                     <p>
                         Análise de qualidade de energia, ensaios de afundamento
                         de tensão, surtos, eficiência energética e simulação
@@ -217,17 +246,30 @@
                 </div>
             </div>
 
-            <!-- Homologação -->
             <div class="service-premium-card">
-                <div class="service-image">
-                    <img src="assets/homologacao.png" alt="Homologação">
+                <div class="service-icon-box">
+                    <div class="tech-icon-wrapper">
+                        <i data-lucide="layers" class="tech-vector-icon"></i>
+                    </div>
                 </div>
+                <div class="service-content">
+                    <span class="service-badge">MATERIAIS</span>
+                    <h3>Materiais</h3>
+                    <p>
+                        Ensaios de ensaios eletricos para materiais isolamento aterramento, nível de isolamento e essas questões, segurança e etc.
+                    </p>
+                </div>
+            </div>
 
+            <div class="service-premium-card">
+                <div class="service-icon-box">
+                    <div class="tech-icon-wrapper">
+                        <i data-lucide="file-text" class="tech-vector-icon"></i>
+                    </div>
+                </div>
                 <div class="service-content">
                     <span class="service-badge">CERTIFICAÇÃO</span>
-
                     <h3>Homologação e Desenvolvimento de Produtos</h3>
-
                     <p>
                         Apoio à indústria na superação de barreiras regulatórias,
                         fornecendo relatórios oficiais de ensaios laboratoriais,
@@ -236,17 +278,15 @@
                 </div>
             </div>
 
-            <!-- Consultoria -->
             <div class="service-premium-card">
-                <div class="service-image">
-                    <img src="assets/consultoria.png" alt="Consultoria">
+                <div class="service-icon-box">
+                    <div class="tech-icon-wrapper">
+                        <i data-lucide="trending-up" class="tech-vector-icon"></i>
+                    </div>
                 </div>
-
                 <div class="service-content">
                     <span class="service-badge">P&D</span>
-
                     <h3>Projetos e Consultoria</h3>
-
                     <p>
                         Projetos voltados à transição energética, eficiência
                         energética, sistemas de medição, diagnóstico e mitigação
@@ -257,203 +297,211 @@
             </div>
 
         </div>
-
     </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons({
+        attrs: {
+          'stroke-width': 1.5,
+          'class': 'lucide-tech'
+        }
+      });
+    </script>
 </section>
 
 <!-- ================= INFRAESTRUTURA ================= -->
 <section id="infraestrutura" class="section infraestrutura">
     <div class="container">
 
-        <h2 class="section-title text-center">
-            Infraestrutura <span class="text-cyan">Tecnológica</span>
-        </h2>
+        <div class="text-center" style="margin-bottom: 3.5rem;">
+            <h2 class="section-title">Conheça nossa <span class="text-cyan">Infraestrutura</span></h2>
+            <p class="infra-subtitle"> Explore de perto nossos laboratórios de ponta e núcleos de ensaios tecnológicos avançados em tempo real.</p>
+        </div>
 
-        <div class="infra-showcase">
-
-            <div class="infra-video-card">
-                <span class="infra-badge">Câmara Anecoica</span>
-
-                <video class="infra-video-element" autoplay muted loop>
-                    <source src="assets/videocamera.mp4" type="video/mp4">
+        <div class="infra-central-wrapper">
+            
+            <div class="infra-main-display central-monitor">
+                <video id="mainVideoPlayer" autoplay muted loop playsinline>
+                    <source id="videoSource" src="assets/videocamera.mp4" type="video/mp4">
                 </video>
 
-                <div class="video-overlay">
-                    <h3>Ensaios EMC</h3>
-                    <p>Alta precisão em compatibilidade eletromagnética</p>
+                <div class="infra-main-overlay">
+                    <div class="scanline"></div>
+                    <span class="live-indicator"><span class="ping-dot"></span> REPRODUZINDO STREAM</span>
+                    <h3 id="mainVideoTitle">Câmara Anecoica</h3>
+                    <p id="mainVideoTag">Ensaios EMC / Compatibilidade Eletromagnética</p>
                 </div>
             </div>
-
-            <div class="infra-subgrid">
-
-                <div class="infra-photo-card"
-                     style="background-image:url('assets/gonio.jpg')">
-                    <div class="infra-photo-card-inner">
-                        <h3>Fotometria</h3>
-                        <p>Ensaios ópticos</p>
+                <div class="infra-thumbnails-grid central-thumbs">
+                    
+                    <div class="infra-thumb active" 
+                        style="background-image: url('assets/camaraanecoica.jpg');"
+                        onclick="switchVideo(this, 'assets/videos/videocamera.mp4', 'Câmara Anecoica', 'Ensaios EMC / Compatibilidade Eletromagnética')">
+                        <div class="thumb-blur-cover"></div>
+                        <div class="video-play-indicator"></div>
+                        <span>Câmara Anecoica</span>
                     </div>
-                </div>
 
-                <div class="infra-photo-card"
-                     style="background-image:url('assets/aplicador.jpg')">
-                    <div class="infra-photo-card-inner">
-                        <h3>Materiais</h3>
-                        <p>Ensaios físicos</p>
+                    <div class="infra-thumb" 
+                        style="background-image: url('assets/gonio.jpg');"
+                        onclick="switchVideo(this, 'assets/videos/Fotometria.mp4', 'Fotometria', 'Ensaios Ópticos e Radiométricos')">
+                        <div class="thumb-blur-cover"></div>
+                        <div class="video-play-indicator"></div>
+                        <span>Fotometria</span>
                     </div>
-                </div>
 
-            </div>
+                    <div class="infra-thumb" 
+                        style="background-image: url('assets/aplicador.jpg');"
+                        onclick="switchVideo(this, 'assets/videos/Materiais.mp4', 'Materiais', 'Ensaios de segurança elétrica e isolamento de materiais')">
+                        <div class="thumb-blur-cover"></div>
+                        <div class="video-play-indicator"></div>
+                        <span>Materiais</span>
+                    </div>
+
+                </div>
 
         </div>
 
     </div>
 </section>
-
 <section id="normas" class="section normas">
+    <div class="container">
 
-```
-<div class="container">
-
-    <div class="text-center" style="margin-bottom:4rem;">
-
-        <span class="section-label">ATENDIMENTO NACIONAL</span>
-
-        <h2 class="section-title">
-            Ensaios, Homologação e Conformidade para todo o
-            <span class="text-cyan">Brasil</span>
-        </h2>
-
-        <p class="section-subtitle">
-            O Laboratório de Usos Finais e Gestão de Energia do IPT
-            oferece suporte técnico especializado para fabricantes,
-            integradores, concessionárias, centros de pesquisa e
-            desenvolvedores de tecnologia em todas as etapas do ciclo
-            de avaliação e conformidade de produtos.
-        </p>
-
-    </div>
-
-    <div class="normas-highlight">
-
-        <div class="highlight-card">
-            <span class="highlight-number">01</span>
-            <h3>Ensaios Laboratoriais</h3>
-            <p>
-                Execução de ensaios elétricos, energéticos,
-                fotométricos e de compatibilidade eletromagnética
-                em infraestrutura especializada.
+        <div class="text-center" style="margin-bottom: 4rem;">
+            <span class="inmetro-label">ATENDIMENTO NACIONAL</span>
+            <h2 class="section-title">
+                Ensaios, Homologação e Conformidade para todo o <span class="text-cyan">Brasil</span>
+            </h2>
+            <p class="section-subtitle" style="color: var(--text-secondary); max-width: 800px; margin: 1rem auto 0; line-height: 1.7;">
+                O Laboratório de Usos Finais e Gestão de Energia do IPT oferece suporte técnico especializado para fabricantes,
+                integradores, concessionárias, centros de pesquisa e desenvolvedores de tecnologia em todas as etapas do ciclo
+                de avaliação e conformidade de produtos.
             </p>
         </div>
 
-        <div class="highlight-card">
-            <span class="highlight-number">02</span>
-            <h3>Homologação</h3>
-            <p>
-                Apoio técnico para atendimento de requisitos
-                regulatórios e superação de barreiras técnicas
-                para comercialização de produtos.
+        <div class="normas-highlight-grid">
+
+            <div class="highlight-card">
+                <span class="highlight-number">01</span>
+                <h3>Ensaios Laboratoriais</h3>
+                <p>
+                    Execução de ensaios elétricos, energéticos, fotométricos e de compatibilidade eletromagnética 
+                    em infraestrutura altamente especializada.
+                </p>
+            </div>
+
+            <div class="highlight-card">
+                <span class="highlight-number">02</span>
+                <h3>Homologação</h3>
+                <p>
+                    Apoio técnico experiente para atendimento de requisitos regulatórios e superação de barreiras técnicas 
+                    para comercialização ágil de produtos.
+                </p>
+            </div>
+
+            <div class="highlight-card">
+                <span class="highlight-number">03</span>
+                <h3>Relatórios Oficiais</h3>
+                <p>
+                    Emissão de relatórios técnicos perfeitamente rastreáveis, amplamente reconhecidos e elaborados 
+                    por especialistas do IPT.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="text-center" style="margin-top: 5rem; margin-bottom: 3rem;">
+            <h3 style="font-size: 1.8rem; color: #fff; font-weight: 600;">
+                Principais Normas Atendidas
+            </h3>
+            <p style="color: var(--text-secondary); max-width: 700px; margin: 1rem auto 0;">
+                Atuação baseada em diretrizes nacionais e internacionais amplamente utilizadas pela indústria 
+                eletroeletrônica, energia, automação e telecomunicações.
             </p>
         </div>
 
-        <div class="highlight-card">
-            <span class="highlight-number">03</span>
-            <h3>Relatórios Oficiais</h3>
+        <div class="normas-modern-grid">
+
+            <div class="norma-modern-card">
+                <div class="norma-card-header">
+                    <span class="norma-tech-tag">INT</span>
+                    <h4>IEC</h4>
+                </div>
+                <p>Diretrizes e normas internacionais aplicadas globalmente para o desenvolvimento e validação de equipamentos eletroeletrônicos.</p>
+            </div>
+
+            <div class="norma-modern-card">
+                <div class="norma-card-header">
+                    <span class="norma-tech-tag">QMS</span>
+                    <h4>ISO</h4>
+                </div>
+                <p>Sistemas de gestão internacional da qualidade, calibração analítica precisa e padronização de metodologias de ensaio.</p>
+            </div>
+
+            <div class="norma-modern-card">
+                <div class="norma-card-header">
+                    <span class="norma-tech-tag">BR</span>
+                    <h4>ABNT</h4>
+                </div>
+                <p>Normas técnicas nacionais regulatórias e procedimentos normativos aplicáveis diretamente ao mercado brasileiro.</p>
+            </div>
+
+            <div class="norma-modern-card">
+                <div class="norma-card-header">
+                    <span class="norma-tech-tag">EMC</span>
+                    <h4>CISPR</h4>
+                </div>
+                <p>Regulamentações de compatibilidade eletromagnética, proteção de radiofrequência e limites rígidos de emissão.</p>
+            </div>
+
+            <div class="norma-modern-card">
+                <div class="norma-card-header">
+                    <span class="norma-tech-tag">EMC</span>
+                    <h4>IEC 61000</h4>
+                </div>
+                <p>Ensaios completos de surto, imunidade transitória e níveis de emissão conduzida e irradiada no espectro magnético.</p>
+            </div>
+
+            <div class="norma-modern-card">
+                <div class="norma-card-header">
+                    <span class="norma-tech-tag">SYS</span>
+                    <h4>IEC 60255</h4>
+                </div>
+                <p>Conjunto de testes operacionais dedicados a relés de proteção elétrica e monitoramento de sistemas de potência.</p>
+            </div>
+
+        </div>
+
+        <div class="text-center" style="margin-top: 4rem; margin-bottom: 3.5rem;">
+            <a href="http://www.inmetro.gov.br/laboratorios/rble/detalhe_laboratorio.asp?nom_apelido=IPT%2FLGE"
+               target="_blank" class="btn btn-primary">
+                Consultar Escopo Completo no Inmetro
+            </a>
+        </div>
+
+        <div class="inmetro-badge-wrapper">
+        
+        <div class="inmetro-badge-logo-box">
+            <img src="assets/inmetro.png" alt="Selo Inmetro Acreditação" class="inmetro-official-img">
+        </div>
+
+        <div class="inmetro-badge-content">
+            <span class="inmetro-label">ACREDITAÇÃO INMETRO</span>
+            <h4>Laboratório Reconhecido Nacionalmente</h4>
             <p>
-                Emissão de relatórios técnicos rastreáveis,
-                reconhecidos e elaborados por especialistas
-                do IPT.
+                Laboratório acreditado pelo Inmetro para execução de ensaios com estrita rastreabilidade metrológica 
+                e reconhecida competência técnica conforme os requisitos internacionais estabelecidos pela ABNT NBR ISO/IEC 17025.
             </p>
         </div>
 
-    </div>
-
-    <div class="text-center" style="margin-top:5rem; margin-bottom:3rem;">
-
-        <h3 style="font-size:1.8rem; color:#fff;">
-            Principais Normas Atendidas
-        </h3>
-
-        <p style="color:var(--text-secondary); max-width:700px; margin:1rem auto 0;">
-            Atuação baseada em normas nacionais e internacionais
-            amplamente utilizadas pela indústria eletroeletrônica,
-            energia, automação e telecomunicações.
-        </p>
-
-    </div>
-
-    <div class="normas-modern-grid">
-
-        <div class="norma-modern-card">
-            <h4>IEC</h4>
-            <p>Normas internacionais para equipamentos eletroeletrônicos.</p>
+        <div class="inmetro-partner-seals">
+            <img src="assets/ilac.png" alt="Selo ILAC MRA" class="partner-seal-img">
         </div>
-
-        <div class="norma-modern-card">
-            <h4>ISO</h4>
-            <p>Sistemas de gestão da qualidade e metodologias de ensaio.</p>
-        </div>
-
-        <div class="norma-modern-card">
-            <h4>ABNT</h4>
-            <p>Normas técnicas nacionais aplicáveis ao mercado brasileiro.</p>
-        </div>
-
-        <div class="norma-modern-card">
-            <h4>CISPR</h4>
-            <p>Compatibilidade eletromagnética e limites de emissão.</p>
-        </div>
-
-        <div class="norma-modern-card">
-            <h4>IEC 61000</h4>
-            <p>Ensaios EMC, imunidade e emissão conduzida e irradiada.</p>
-        </div>
-
-        <div class="norma-modern-card">
-            <h4>IEC 60255</h4>
-            <p>Proteção, relés e sistemas elétricos de potência.</p>
-        </div>
-
-    </div>
-
-    <div class="text-center" style="margin-top:4rem;">
-
-        <a
-            href="http://www.inmetro.gov.br/laboratorios/rble/detalhe_laboratorio.asp?nom_apelido=IPT%2FLGE"
-            target="_blank"
-            class="btn btn-primary">
-
-            Consultar Escopo Completo no Inmetro
-        </a>
-
-    </div>
-
-    <div class="inmetro-badge-wrapper">
-
-    <div class="inmetro-badge-icon">
-        🛡️
-    </div>
-
-    <div class="inmetro-badge-content">
-        <span class="inmetro-label">
-            ACREDITAÇÃO INMETRO
-        </span>
-
-        <h4>
-            Laboratório Reconhecido Nacionalmente
-        </h4>
-
-        <p>
-            Laboratório acreditado pelo Inmetro para execução de ensaios
-            com rastreabilidade metrológica e competência técnica
-            conforme os requisitos da ISO/IEC 17025.
-        </p>
-    </div>
 
 </div>
 
-</div>
-```
-
+    </div>
 </section>
 
 <!-- ================= MERCADOS ================= -->
@@ -483,7 +531,7 @@
         <div class="mercados-visual-grid">
 
             <div class="mercado-visual-card">
-                <img src="assets/mercado-energia.jpg">
+                <img src="assets/mercados/energia.png">
                 <div class="mercado-overlay">
                     <h3>Energia</h3>
                     <p>Smart grids, proteção elétrica e qualidade de energia.</p>
@@ -491,7 +539,7 @@
             </div>
 
             <div class="mercado-visual-card">
-                <img src="assets/mercado-industria.jpg">
+                <img src="assets/mercados/industria.png">
                 <div class="mercado-overlay">
                     <h3>Indústria</h3>
                     <p>Automação, máquinas e equipamentos industriais.</p>
@@ -499,15 +547,15 @@
             </div>
 
             <div class="mercado-visual-card">
-                <img src="assets/mercado-mobilidade.jpg">
+                <img src="assets/mercados/02.png">
                 <div class="mercado-overlay">
-                    <h3>Mobilidade Elétrica</h3>
-                    <p>Carregadores, baterias e infraestrutura veicular.</p>
+                    <h3>Mobilidade</h3>
+                    <p>Mobilidade elétrica e infraestrutura veicular.</p>
                 </div>
             </div>
 
             <div class="mercado-visual-card">
-                <img src="assets/mercado-telecom.jpg">
+                <img src="assets/mercados/telecomunicacoes.png">
                 <div class="mercado-overlay">
                     <h3>Telecomunicações</h3>
                     <p>Equipamentos de comunicação e conectividade.</p>
@@ -515,7 +563,7 @@
             </div>
 
             <div class="mercado-visual-card">
-                <img src="assets/mercado-saude.jpg">
+                <img src="assets/mercados/saude.png">
                 <div class="mercado-overlay">
                     <h3>Saúde</h3>
                     <p>Equipamentos médicos e sistemas críticos.</p>
@@ -523,7 +571,7 @@
             </div>
 
             <div class="mercado-visual-card">
-                <img src="assets/mercado-iluminacao.jpg">
+                <img src="assets/mercados/iluminacao.jpg">
                 <div class="mercado-overlay">
                     <h3>Iluminação</h3>
                     <p>LED, fotometria e eficiência energética.</p>
@@ -535,6 +583,7 @@
     </div>
 
 </section>
+
 <!-- ================= IMPACTO E EXPERIÊNCIA ================= -->
 <section id="impacto" class="section parcerias">
     <div class="container">
@@ -557,7 +606,7 @@
         <div class="impact-stats-grid">
 
             <div class="impact-stat-card">
-                <div class="impact-number">120+</div>
+                <div class="impact-number">126</div>
                 <div class="impact-label">Anos de história do IPT</div>
             </div>
 
@@ -567,15 +616,9 @@
             </div>
 
             <div class="impact-stat-card">
-                <div class="impact-number">50+</div>
+                <div class="impact-number">5574</div>
                 <div class="impact-label">Clientes atendidos</div>
             </div>
-
-            <div class="impact-stat-card">
-                <div class="impact-number">Brasil</div>
-                <div class="impact-label">Atendimento nacional</div>
-            </div>
-
         </div>
 
         <div class="impact-showcase">
@@ -606,26 +649,6 @@
 
         </div>
 
-        <div class="impact-banner">
-
-            <h3>
-                Confiabilidade técnica reconhecida por empresas,
-                fabricantes, concessionárias e centros de pesquisa.
-            </h3>
-
-            <p>
-                Ensaios acreditados, relatórios rastreáveis e suporte
-                especializado para projetos críticos em todo o ciclo de
-                desenvolvimento tecnológico.
-            </p>
-
-            <a href="#contato" class="btn btn-primary">
-                Fale com nossos especialistas
-            </a>
-
-        </div>
-
-    </div>
 </section>
 
 <!-- ================= CONTATO ================= -->
@@ -769,5 +792,59 @@
     <p class="footer-copy">© 2026 Todos os direitos reservados</p>
 </footer>
 
+
+<!-- Java script para abrir as imagens  -->
+ <script>
+function switchGallery(element, title, tag) {
+    // 1. Pega a URL da imagem de fundo do item clicado
+    const bgUrl = element.style.backgroundImage;
+    
+    // 2. Aplica a imagem no display principal
+    const mainDisplay = document.getElementById('mainDisplay');
+    mainDisplay.style.backgroundImage = bgUrl;
+    
+    // 3. Atualiza os textos dinamicamente com efeito cibernético
+    document.getElementById('mainDisplayTitle').innerText = title;
+    document.getElementById('mainDisplayTag').innerText = tag;
+    
+    // 4. Remove a classe ativa de todas as miniaturas
+    const thumbs = document.querySelectorAll('.infra-thumb');
+    thumbs.forEach(thumb => thumb.classList.remove('active'));
+    
+    // 5. Adiciona a classe ativa apenas na miniatura clicada
+    element.classList.add('active');
+}
+
+</script>
+
+<!-- jS para rodar nossos videos -->
+<script>
+function switchVideo(element, videoUrl, title, tag) {
+    const videoPlayer = document.getElementById('mainVideoPlayer');
+    const videoSource = document.getElementById('videoSource');
+    
+    // 1. Atualiza o endereço do arquivo de vídeo
+    videoSource.src = videoUrl;
+    
+    // 2. Força o reprodutor de vídeo a recarregar a nova mídia e rodar
+    videoPlayer.load();
+    videoPlayer.play().catch(error => {
+        console.log("Autoplay aguardando interação do usuário:", error);
+    });
+    
+    // 3. Atualiza os textos dinâmicos do HUD
+    document.getElementById('mainVideoTitle').innerText = title;
+    document.getElementById('mainVideoTag').innerText = tag;
+    
+    // 4. Alterna a borda acesa (classe active) entre as miniaturas
+    const thumbs = element.parentElement.querySelectorAll('.infra-thumb');
+    thumbs.forEach(thumb => thumb.classList.remove('active'));
+    element.classList.add('active');
+}
+</script>
+
+
+
 </body>
+
 </html>
