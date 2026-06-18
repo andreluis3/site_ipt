@@ -624,17 +624,7 @@ a { text-decoration: none; }
 }
 
 /* Painel de Exibição Principal */
-.infra-main-display {
-    position: relative;
-    height: 340px;
-    border-radius: 16px;
-    background-size: cover;
-    background-position: center;
-    border: 1px solid rgba(0, 240, 255, 0.2);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 0 30px rgba(0, 240, 255, 0.1);
-    overflow: hidden;
-    transition: background-image 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
+/* Painel de Exibição Principal */
 
 .infra-main-overlay {
     position: absolute;
@@ -691,22 +681,40 @@ a { text-decoration: none; }
 .infra-thumbnails-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 16px;
+    margin-top: 16px;
 }
 
+/* Estado Padrão da Miniatura (Sem borda serrilhada) */
 .infra-thumb {
     position: relative;
     height: 85px;
-    border-radius: 10px;
+    border-radius: 12px;
     background-size: cover;
     background-position: center;
+    background-color: #060c1a;
     cursor: pointer;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* REMOVIDO: Linha física eliminada. Usando sombra escura e nítida */
+    border: none;
+    outline: none;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 8px 20px rgba(0, 0, 0, 0.4);
+    
     overflow: hidden;
-    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: translateZ(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* Hover e Estado Ativo das Miniaturas */
+.infra-thumb:hover .thumb-blur-cover {
+    background: rgba(6, 12, 26, 0.3);
+    backdrop-filter: blur(0px);
+}
+
+.infra-thumb:hover span { 
+    color: #ffffff; 
 }
 
 .infra-thumb span {
@@ -738,18 +746,26 @@ a { text-decoration: none; }
 .infra-thumb:hover span { color: #ffffff; }
 
 .infra-thumb.active {
-    border-color: #00f0ff;
-    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+    border: none;
+    outline: none;
+    
+    /* Contorno em neon de 2px perfeitamente liso e circular nos cantos */
+    box-shadow: 
+        0 0 0 2px #00f0ff, 
+        0 0 20px rgba(0, 240, 255, 0.45), 
+        inset 0 0 8px rgba(0, 240, 255, 0.3);
+    
+    transform: translateY(-3px) translateZ(0);
 }
 
 .infra-thumb.active .thumb-blur-cover {
-    background: transparent;
+    background: rgba(0, 240, 255, 0.02);
     backdrop-filter: blur(0px);
 }
 
 .infra-thumb.active span {
     color: #00f0ff;
-    text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
 }
 
 /* Responsividade */
@@ -814,16 +830,35 @@ a { text-decoration: none; }
     border-radius: 16px;
     background-size: cover;
     background-position: center;
-    border: 1px solid rgba(0, 240, 255, 0.2);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 0 30px rgba(0, 240, 255, 0.1);
+    background-color: #060c1a;
+    
+    /* Remoção total de linhas físicas que causam aliasing */
+    border: none;
+    outline: none;
+
+    /* Contorno perfeito por sombra vetorial de 1px */
+    box-shadow: 
+        0 0 0 1px rgba(0, 240, 255, 0.25), 
+        inset 0 0 20px rgba(0, 240, 255, 0.1), 
+        0 30px 60px -15px rgba(0, 0, 0, 0.8);
+
     overflow: hidden;
-    transition: background-image 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform: translateZ(0);
+    transition: background-image 0.4s ease;
+}
+
+.infra-main-display video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
 }
 
 .infra-main-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(6, 12, 26, 0.9) 0%, rgba(6, 12, 26, 0.2) 60%, transparent 100%);
+    background: linear-gradient(to top, rgba(6, 12, 26, 0.95) 0%, rgba(6, 12, 26, 0.2) 60%, transparent 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -839,7 +874,7 @@ a { text-decoration: none; }
 }
 
 .infra-main-overlay p {
-    color: var(--cyan);
+    color: #00f0ff;
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 0.05em;
@@ -875,7 +910,8 @@ a { text-decoration: none; }
 .infra-thumbnails-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 16px;
+    margin-top: 16px;
 }
 
 .infra-thumb {
@@ -896,19 +932,20 @@ a { text-decoration: none; }
 .infra-thumb span {
     position: relative;
     z-index: 2;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.78rem;
-    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.8rem;
+    font-weight: 700;
     text-align: center;
-    padding: 0 4px;
+    padding: 0 8px;
+    letter-spacing: 0.02em;
     transition: color 0.3s ease;
 }
 
 .thumb-blur-cover {
     position: absolute;
     inset: 0;
-    background: rgba(6, 12, 26, 0.6);
-    backdrop-filter: blur(1px);
+    background: rgba(6, 12, 26, 0.65);
+    backdrop-filter: blur(1.5px);
     transition: all 0.3s ease;
     z-index: 1;
 }
@@ -922,8 +959,19 @@ a { text-decoration: none; }
 .infra-thumb:hover span { color: #ffffff; }
 
 .infra-thumb.active {
-    border-color: #00f0ff;
-    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+    /* Em vez de border-color pura que gera linhas duras e serrilhadas */
+    border: 1px solid transparent;
+    
+    /* Cria uma linha interna sutil usando outline para não deformar o box-model */
+    outline: 1px solid rgba(0, 240, 255, 0.7);
+    outline-offset: -1px;
+    
+    /* Efeito de brilho externo esfumaçado e orgânico (Glow técnico) */
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.35),
+                inset 0 0 12px rgba(0, 240, 255, 0.2);
+    
+    /* Mantém o anti-aliasing ativo na miniatura */
+    transform: translateY(-2px) translateZ(0); 
 }
 
 .infra-thumb.active .thumb-blur-cover {
@@ -2110,17 +2158,132 @@ a { text-decoration: none; }
     max-width:700px;
     margin:0 auto 2rem auto;
 }
+.impacto-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+}
 
-@media(max-width:768px){
+.impacto-card {
+    background: rgba(6, 12, 26, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    /* Contorno suave por sombra vetorial para não quebrar nos cantos */
+    box-shadow: 
+        0 0 0 1px rgba(0, 240, 255, 0.15),
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        inset 0 0 15px rgba(0, 82, 204, 0.15);
+    
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    .impact-stats-grid{
-        grid-template-columns:1fr 1fr;
-    }
+.impacto-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 0 0 1px rgba(0, 240, 255, 0.3),
+        0 25px 50px rgba(0, 0, 0, 0.6),
+        inset 0 0 20px rgba(0, 82, 204, 0.25);
+}
 
-    .impact-showcase{
-        grid-template-columns:1fr;
-    }
+.impacto-value {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 800;
+    color: #00f0ff;
+    line-height: 1;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+}
 
+.impacto-label {
+    color: #b6c4d4;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    line-height: 1.4;
+}
+
+/* --- VELOCÍMETRO / GAUGE CSS --- */
+.gauge-wrapper {
+    position: relative;
+    width: 140px;
+    height: 85px; /* Cortado na metade para fazer o arco */
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.gauge-radial {
+    position: absolute;
+    top: 0;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    /* Gradiente cônico usando a cor translúcida solicitada */
+    background: conic-gradient(
+        from 180deg at 50% 50%,
+        #00f0ff 0deg,
+        rgba(0, 82, 204, 0.8) 90deg,
+        #00f0ff 180deg,
+        transparent 180deg
+    );
+    mask: radial-gradient(circle, transparent 52px, #000 53px);
+    -webkit-mask: radial-gradient(circle, transparent 52px, #000 53px);
+}
+
+.gauge-percentage {
+    position: absolute;
+    bottom: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+}
+
+/* --- EXPOSIÇÃO DE TEXTOS LARGOS (SHOWCASE) --- */
+.impact-showcase {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 3rem; /* Margem superior para separar dos cards numéricos */
+}
+
+.impact-card-large {
+    background: rgba(6, 12, 26, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 
+        0 0 0 1px rgba(0, 240, 255, 0.1),
+        0 15px 35px rgba(0, 0, 0, 0.3),
+        inset 0 0 20px rgba(0, 82, 204, 0.05);
+    transition: border-color 0.3s ease;
+}
+
+.impact-card-large h3 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.impact-card-large p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 /* Nova Caixa contenedora do Ícone em Vidro */
@@ -2143,7 +2306,7 @@ a { text-decoration: none; }
     transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.4s ease, color 0.4s ease;
 }
 
-/* Dinâmica de Interação Hover no Card */
+/* Dinâmica de Interação Hover no Card de Serviço */
 .service-premium-card:hover .service-icon-box {
     background: linear-gradient(to bottom, rgba(0, 240, 255, 0.08), rgba(0, 102, 255, 0.02));
 }
@@ -2154,33 +2317,34 @@ a { text-decoration: none; }
     filter: drop-shadow(0 0 15px var(--cyan));
 }
 
-/* Nova Caixa contenedora do Ícone em Vidro */
-.service-icon-box {
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(to bottom, rgba(0, 240, 255, 0.03), transparent);
-    border-bottom: 1px solid rgba(0, 240, 255, 0.1);
-    position: relative;
-    transition: background 0.4s ease;
+/* ==========================================================================
+   MEDIA QUERIES (RESPONSIVIDADE)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .impacto-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* O card do velocímetro ocupa 2 colunas em tablets para ficar centralizado */
+    .metric-card {
+        grid-column: span 2;
+    }
 }
 
-/* O Ícone técnico em vetor sutil */
-.tech-vector-icon {
-    font-size: 2.8rem;
-    color: var(--cyan);
-    filter: drop-shadow(0 0 6px rgba(0, 240, 255, 0.4));
-    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.4s ease, color 0.4s ease;
-}
+@media (max-width: 768px) {
+    .impacto-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .metric-card {
+        grid-column: span 1;
+    }
 
-/* Dinâmica de Interação Hover no Card */
-.service-premium-card:hover .service-icon-box {
-    background: linear-gradient(to bottom, rgba(0, 240, 255, 0.08), rgba(0, 102, 255, 0.02));
-}
-
-.service-premium-card:hover .tech-vector-icon {
-    transform: scale(1.1) translateY(-2px);
-    color: #ffffff;
-    filter: drop-shadow(0 0 15px var(--cyan));
+    .impact-showcase {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .impact-card-large {
+        padding: 1.8rem;
+    }
 }
