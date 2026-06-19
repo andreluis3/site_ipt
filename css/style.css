@@ -1782,110 +1782,470 @@ a { text-decoration: none; }
     background: rgba(0, 240, 255, 0.03);
     color: var(--text-secondary);
 }
-
 /* ==========================================================================
-   SEÇÃO CONTATO
-   ========================================================================== */
-.contato { background-color: var(--bg-main); }
+CONTATO
+========================================================================== */
 
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
+.contato {
+background: var(--bg-main);
 }
 
-.contact-cards {
+.contact-grid {
+display: grid;
+grid-template-columns: 1.1fr .9fr;
+gap: 2rem;
+align-items: start;
+}
+
+.contact-left,
+.contact-right {
+display: flex;
+flex-direction: column;
+gap: 1.5rem;
+}
+
+/* CARDS */
+
+.main-contact-card,
+.areas-card,
+.address-card,
+.qr-card {
+
+background: linear-gradient(
+    180deg,
+    rgba(7,16,38,.96) 0%,
+    rgba(4,11,28,.98) 100%
+);
+
+border: 1px solid rgba(0,240,255,.08);
+border-radius: 18px;
+
+transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
+
+
+}
+
+.main-contact-card:hover,
+.areas-card:hover,
+.address-card:hover,
+.qr-card:hover {
+
+transform: translateY(-8px);
+
+border-color: rgba(0,240,255,.25);
+
+box-shadow:
+    0 20px 40px rgba(0,240,255,.08);
+
+
+}
+
+/* CARD PRINCIPAL */
+
+.main-contact-card {
+padding: 2rem;
+}
+
+.contact-badge {
+display: inline-block;
+
+background: rgba(0,240,255,.12);
+
+color: var(--cyan);
+
+padding: .5rem .9rem;
+
+border-radius: 999px;
+
+font-size: .8rem;
+
+margin-bottom: 1rem;
+}
+
+.main-contact-card h3 {
+
+
+color: #fff;
+
+font-size: 1.7rem;
+
+margin-bottom: 1rem;
+
+
+}
+
+.main-contact-card p {
+
+
+color: var(--text-secondary);
+
+line-height: 1.8;
+
+margin-bottom: 2rem;
+
+
+}
+
+.contact-info {
+
+
+display: grid;
+
+grid-template-columns: 1fr 1fr;
+
+gap: 1rem;
+
+
+}
+
+.contact-info span {
+
+
+display: block;
+
+color: var(--text-muted);
+
+font-size: .8rem;
+
+margin-bottom: .3rem;
+
+
+}
+
+.contact-info strong {
+
+
+color: var(--cyan);
+
+font-size: 1rem;
+
+
+}
+
+/* ÁREAS */
+
+.areas-card {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border-w);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+}
+
+.areas-card h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.responsaveis-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 }
 
-.contact-card {
-    background: var(--bg-card);
-    border: 1px solid var(--glass-border-w);
-    border-radius: var(--radius-md);
-    padding: 1.4rem;
-    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+.responsavel-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(0,240,255,0.08);
+    border-radius: 12px;
+    padding: 1rem;
+    transition: all .3s ease;
 }
-.contact-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(0, 240, 255, 0.3);
-    box-shadow: 0 10px 28px rgba(0, 240, 255, 0.08);
+
+.responsavel-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(0,240,255,0.25);
 }
-.contact-card .c-icon { font-size: 1.5rem; margin-bottom: 0.75rem; display: block; }
-.contact-card h3 {
+
+.resp-area {
+    display: inline-block;
+    font-size: .7rem;
+    font-weight: 700;
+    color: var(--cyan);
+    background: rgba(0,240,255,0.08);
+    border: 1px solid rgba(0,240,255,0.15);
+    padding: .3rem .6rem;
+    border-radius: 20px;
+    margin-bottom: .75rem;
+}
+
+.responsavel-card h5 {
     color: #fff;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
+    font-size: .95rem;
+    margin-bottom: .5rem;
     line-height: 1.4;
 }
-.contact-card .c-sub {
-    color: var(--text-muted);
-    font-size: 0.75rem;
-    margin-bottom: 0.4rem;
-}
-.contact-card .c-value {
-    color: var(--cyan);
-    font-size: 0.88rem;
-    font-weight: 600;
-    word-break: break-all;
-}
-.contact-card .c-value a {
-    color: inherit;
-    transition: color var(--transition);
-}
-.contact-card .c-value a:hover { color: var(--blue-light); }
 
-.contact-right {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+.responsavel-card a {
+    color: var(--cyan);
+    text-decoration: none;
+    font-size: .85rem;
 }
+
+.responsavel-card a:hover {
+    color: #fff;
+}
+
+/* ENDEREÇO */
 
 .address-card {
-    background: var(--bg-card);
-    border: 1px solid var(--glass-border-w);
-    border-radius: var(--radius-md);
-    padding: 2rem;
-    position: relative;
-    transition: border-color var(--transition);
+padding: 2rem;
 }
-.address-card:hover { border-color: rgba(0, 240, 255, 0.25); }
-.address-card .a-pin {
-    position: absolute;
-    top: 1.5rem; right: 1.5rem;
-    font-size: 1.4rem;
+
+.address-card h3 {
+
+
+color: #fff;
+
+margin-bottom: 1rem;
+
+
 }
-.address-card h3 { color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; }
-.address-card .lab-name {
-    color: var(--cyan);
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+
+.lab-name {
+
+
+color: var(--cyan);
+
+font-weight: 600;
+
+margin-bottom: 1rem;
+
+
 }
-.address-card p  { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.2rem; }
+
+.address-card p {
+
+
+color: var(--text-secondary);
+
+line-height: 1.7;
+
+
+}
+
+.location-btn {
+width: 100%;
+margin-top: 1.5rem;
+}
+
+/* QR */
 
 .qr-card {
-    background: var(--bg-card);
-    border: 1px solid var(--glass-border-w);
-    border-radius: var(--radius-md);
-    padding: 2rem;
-    text-align: center;
+
+
+padding: 2rem;
+
+text-align: center;
+
+min-height: 430px;
+
+
 }
-.qr-card h4 { font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 0.25rem; }
-.qr-card .qr-inst { color: var(--cyan); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.25rem; }
+
+.qr-tag {
+
+
+color: var(--cyan);
+
+text-transform: uppercase;
+
+letter-spacing: .15em;
+
+font-size: .75rem;
+
+
+}
+
+.qr-card h4 {
+
+
+color: #fff;
+
+margin: 1rem 0 1.5rem;
+
+
+}
+
 .qr-img-wrap {
-    background: #fff;
-    display: inline-block;
-    padding: 0.75rem;
-    border-radius: var(--radius-sm);
-    border: 1px solid rgba(0, 240, 255, 0.25);
-    margin-bottom: 0.75rem;
+
+
+display: inline-block;
+
+background: #fff;
+
+padding: 1rem;
+
+border-radius: 12px;
+
+
 }
-.qr-img-wrap img { display: block; width: 140px; height: auto; }
-.qr-card .qr-hint { color: var(--text-muted); font-size: 0.8rem; }
+
+.qr-img-wrap img {
+
+
+width: 220px;
+
+display: block;
+
+
+}
+
+.qr-hint {
+
+
+color: var(--text-muted);
+
+margin-top: 1rem;
+
+line-height: 1.6;
+
+
+}
+
+
+/* =====================================
+ESPECIALISTAS
+===================================== */
+
+.areas-card {
+padding: 2rem;
+}
+
+.areas-header {
+margin-bottom: 1.5rem;
+}
+
+.areas-header h4 {
+color: #fff;
+font-size: 1.2rem;
+margin-bottom: .5rem;
+}
+
+.areas-header p {
+color: var(--text-secondary);
+font-size: .9rem;
+}
+
+.specialists-grid {
+
+
+display: grid;
+
+grid-template-columns: repeat(2, 1fr);
+
+gap: 1rem;
+
+
+}
+
+.specialist-card {
+
+
+background: rgba(255,255,255,.03);
+
+border: 1px solid rgba(255,255,255,.06);
+
+border-radius: 12px;
+
+padding: 1rem;
+
+transition: all .3s ease;
+
+
+}
+
+.specialist-card:hover {
+
+
+transform: translateY(-4px);
+
+border-color: rgba(0,240,255,.25);
+
+background: rgba(0,240,255,.03);
+
+
+}
+
+.specialist-card h5 {
+
+
+color: #fff;
+
+font-size: .95rem;
+
+margin-bottom: .4rem;
+
+line-height: 1.4;
+
+
+}
+
+.specialist-card span {
+
+
+display: block;
+
+color: var(--text-muted);
+
+font-size: .8rem;
+
+margin-bottom: .8rem;
+
+
+}
+
+.specialist-card a {
+
+
+color: var(--cyan);
+
+font-weight: 600;
+
+text-decoration: none;
+
+word-break: break-word;
+
+
+}
+
+.specialist-card a:hover {
+
+
+color: #fff;
+
+
+}
+
+@media (max-width: 768px) {
+
+
+.specialists-grid {
+    grid-template-columns: 1fr;
+}
+
+
+}
+
+
+
+/* RESPONSIVO */
+
+@media (max-width: 992px) {
+
+
+.contact-grid {
+    grid-template-columns: 1fr;
+}
+
+.contact-info {
+    grid-template-columns: 1fr;
+}
+
+
+}
 
 /* ==========================================================================
    FOOTER
