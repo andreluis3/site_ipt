@@ -18,10 +18,10 @@
 
         <nav class="nav-menu">
             <a href="#home">Início</a>
-            <a href="#sobre">Instituto IPT</a>
+            <a href="#quem-somos">Instituto IPT</a>
             <a href="#servicos">Serviços</a>
             <a href="#infraestrutura">Infraestrutura</a>
-            <a href="#acreditacao">Acreditação</a>
+            <a href="#normas">Acreditação</a>
             <a href="#mercados">Mercados</a>
             <a href="#contato" class="btn-nav">Contato</a>
         </nav>
@@ -320,14 +320,14 @@
 
         <div class="text-center" style="margin-bottom: 3.5rem;">
             <h2 class="section-title">Conheça nossa <span class="text-cyan">Infraestrutura</span></h2>
-            <p class="infra-subtitle"> Explore de perto nossos laboratórios de ponta e núcleos de ensaios tecnológicos avançados em tempo real.</p>
+            <p class="infra-subtitle">Explore de perto nossos laboratórios de ponta e núcleos de ensaios tecnológicos avançados em tempo real.</p>
         </div>
 
         <div class="infra-central-wrapper">
             
             <div class="infra-main-display central-monitor">
-                <video id="mainVideoPlayer" autoplay muted loop playsinline>
-                    <source id="videoSource" src="assets/videocamera.mp4" type="video/mp4">
+                <video id="mainVideoPlayer" autoplay muted playsinline>
+                    <source id="videoSource" src="assets/videos/videocamera.mp4" type="video/mp4">
                 </video>
 
                 <div class="infra-main-overlay">
@@ -337,38 +337,36 @@
                     <p id="mainVideoTag">Ensaios EMC / Compatibilidade Eletromagnética</p>
                 </div>
             </div>
-                <div class="infra-thumbnails-grid central-thumbs">
-                    
-                    <div class="infra-thumb active" 
-                        style="background-image: url('assets/camaraanecoica.jpg');"
-                        onclick="switchVideo(this, 'assets/videos/videocamera.mp4', 'Câmara Anecoica', 'Ensaios EMC / Compatibilidade Eletromagnética')">
-                        <div class="thumb-blur-cover"></div>
-                        <div class="video-play-indicator"></div>
-                        <span>Câmara Anecoica</span>
-                    </div>
 
-                    <div class="infra-thumb" 
-                        style="background-image: url('assets/gonio.jpg');"
-                        onclick="switchVideo(this, 'assets/videos/Fotometria.mp4', 'Fotometria', 'Ensaios Ópticos e Radiométricos')">
-                        <div class="thumb-blur-cover"></div>
-                        <div class="video-play-indicator"></div>
-                        <span>Fotometria</span>
-                    </div>
-
-                    <div class="infra-thumb" 
-                        style="background-image: url('assets/aplicador.jpg');"
-                        onclick="switchVideo(this, 'assets/videos/Materiais.mp4', 'Materiais', 'Ensaios de segurança elétrica e isolamento de materiais')">
-                        <div class="thumb-blur-cover"></div>
-                        <div class="video-play-indicator"></div>
-                        <span>Materiais</span>
-                    </div>
-
+            <div class="infra-thumbnails-grid central-thumbs">
+                
+                <div class="infra-thumb active" 
+                    style="background-image: url('assets/camaraanecoica.jpg');"
+                    onclick="switchVideo(this, 'assets/videos/videocamera.mp4', 'Câmara Anecoica', 'Ensaios EMC / Compatibilidade Eletromagnética')">
+                    <div class="thumb-blur-cover"></div>
+                    <span>Câmara Anecoica</span>
                 </div>
 
-        </div>
+                <div class="infra-thumb" 
+                    style="background-image: url('assets/gonio.jpg');"
+                    onclick="switchVideo(this, 'assets/videos/Fotometria.mp4', 'Fotometria', 'Ensaios Ópticos e Radiométricos')">
+                    <div class="thumb-blur-cover"></div>
+                    <span>Fotometria</span>
+                </div>
 
+                <div class="infra-thumb" 
+                    style="background-image: url('assets/aplicador.jpg');"
+                    onclick="switchVideo(this, 'assets/videos/Materiais.mp4', 'Materiais', 'Ensaios de segurança elétrica e isolamento de materiais')">
+                    <div class="thumb-blur-cover"></div>
+                    <span>Materiais</span>
+                </div>
+
+            </div>
+
+        </div>
     </div>
 </section>
+
 <section id="normas" class="section normas">
     <div class="container">
 
@@ -661,150 +659,151 @@
 </section>
 
 
-
-<!-- =================CONTATO ================= -->
+<!-- ================= CONTATO ================= -->
 <section id="contato" class="section contato bg-darker">
     <div class="container">
 
-```
-    <div class="text-center contato-header">
-        <span class="section-tag">FALE COM O IPT</span>
+        <!-- HEADER -->
+        <div class="text-center contato-header">
+            <span class="section-tag">FALE COM O IPT</span>
 
-        <h2 class="section-title">
-            Conecte-se com nossos <span class="text-cyan">especialistas</span>
-        </h2>
+            <h2 class="section-title">
+                Conecte-se com nossos <span class="text-cyan">especialistas</span>
+            </h2>
 
-        <p class="section-subtitle">
-            Nossa equipe está disponível durante a feira para esclarecer dúvidas,
-            avaliar projetos e apresentar soluções em ensaios laboratoriais,
-            homologação, eficiência energética e compatibilidade eletromagnética.
-        </p>
-    </div>
+            <p class="section-subtitle">
+                Nossa equipe está disponível durante a feira para esclarecer dúvidas,
+                avaliar projetos e apresentar soluções em ensaios laboratoriais,
+                homologação, eficiência energética e compatibilidade eletromagnética.
+            </p>
+        </div>
 
-    <div class="contact-grid">
+        <div class="contact-grid">
 
-        <!-- COLUNA ESQUERDA -->
-        <div class="contact-left">
+            <!-- COLUNA ESQUERDA -->
+            <div class="contact-left">
 
-            <div class="main-contact-card">
+                <!-- CARD PRINCIPAL -->
+                <div class="main-contact-card">
 
-                <span class="contact-badge">
-                    Atendimento Nacional
-                </span>
+                    <span class="contact-badge">
+                        Atendimento Nacional
+                    </span>
 
-                <h3>
-                    Laboratório de Usos Finais e Gestão de Energia
-                </h3>
+                    <h3>
+                        Laboratório de Usos Finais e Gestão de Energia
+                    </h3>
 
-                <p>
-                    Infraestrutura especializada para ensaios,
-                    homologação, certificação, compatibilidade
-                    eletromagnética e avaliação de produtos.
-                </p>
+                    <p>
+                        Infraestrutura especializada para ensaios,
+                        homologação, certificação, compatibilidade
+                        eletromagnética e avaliação de produtos.
+                    </p>
 
-                <div class="contact-info">
-                    <div>
-                        <span>E-mail</span>
-                        <strong>lge@ipt.br</strong>
+                    <div class="contact-info">
+                        <div>
+                            <span>E-mail</span>
+                            <strong>lge@ipt.br</strong>
+                        </div>
+
+                        <div>
+                            <span>Telefone</span>
+                            <strong>(11) 3767-4000</strong>
+                        </div>
                     </div>
 
-                    <div>
-                        <span>Telefone</span>
-                        <strong>(11) 3767-4000</strong>
-                    </div>
                 </div>
 
-            </div>
-
+                <!-- RESPONSÁVEIS -->
                 <div class="areas-card">
 
-    <h4>Responsáveis Técnicos</h4>
+                    <h4>Responsáveis Técnicos</h4>
 
-    <div class="responsaveis-grid">
+                    <div class="responsaveis-grid">
 
-        <div class="responsavel-card">
-            <span class="resp-area">EMC</span>
-            <h5>Compatibilidade Eletromagnética</h5>
-            <a href="mailto:mdias@ipt.br">mdias@ipt.br</a>
-        </div>
+                        <div class="responsavel-card">
+                            <span class="resp-area">EMC</span>
+                            <h5>Compatibilidade Eletromagnética</h5>
+                            <a href="mailto:mdias@ipt.br">mdias@ipt.br</a>
+                        </div>
 
-        <div class="responsavel-card">
-            <span class="resp-area">FOT</span>
-            <h5>Fotometria</h5>
-            <a href="mailto:osanchez@ipt.br">osanchez@ipt.br</a>
-        </div>
+                        <div class="responsavel-card">
+                            <span class="resp-area">FOT</span>
+                            <h5>Fotometria</h5>
+                            <a href="mailto:osanchez@ipt.br">osanchez@ipt.br</a>
+                        </div>
 
-        <div class="responsavel-card">
-            <span class="resp-area">MAT</span>
-            <h5>Materiais Elétricos</h5>
-            <a href="mailto:kleberjo@ipt.br">kleberjo@ipt.br</a>
-        </div>
+                        <div class="responsavel-card">
+                            <span class="resp-area">MAT</span>
+                            <h5>Materiais Elétricos</h5>
+                            <a href="mailto:kleberjo@ipt.br">kleberjo@ipt.br</a>
+                        </div>
 
-        <div class="responsavel-card">
-            <span class="resp-area">LGE</span>
-            <h5>Laboratório LGE</h5>
-            <a href="mailto:lge@ipt.br">lge@ipt.br</a>
-        </div>
+                        <div class="responsavel-card">
+                            <span class="resp-area">LGE</span>
+                            <h5>Laboratório LGE</h5>
+                            <a href="mailto:lge@ipt.br">lge@ipt.br</a>
+                        </div>
 
-    </div>
+                    </div>
 
-</div>
-
-</div>
-
-        </div>
-
-        <!-- COLUNA DIREITA -->
-        <div class="contact-right">
-
-            <div class="address-card">
-
-                <h3>Localização</h3>
-
-                <p class="lab-name">
-                    Instituto de Pesquisas Tecnológicas - IPT
-                </p>
-
-                <p>Laboratório de Usos Finais e Gestão de Energia</p>
-                <p>Av. Prof. Almeida Prado, 532</p>
-                <p>Butantã • São Paulo/SP</p>
-                <p>CEP 05508-901</p>
-
-                <a
-                    href="https://maps.google.com/?q=Av.+Prof.+Almeida+Prado,+532,+Butantã,+São+Paulo"
-                    target="_blank"
-                    class="btn btn-secondary location-btn"
-                >
-                    Ver no Google Maps
-                </a>
-
-            </div>
-
-            <div class="qr-card">
-
-                <span class="qr-tag">
-                    Portfólio Digital
-                </span>
-
-                <h4>
-                    Escaneie e conheça nossos serviços
-                </h4>
-
-                <div class="qr-img-wrap">
-                    <img src="assets/qrcodeipt.png" alt="QR Code IPT">
                 </div>
 
-                <p class="qr-hint">
-                    Acesse o portfólio institucional e entre em contato com nossa equipe.
-                </p>
+            </div>
+
+            <!-- COLUNA DIREITA -->
+            <div class="contact-right">
+
+                <!-- LOCALIZAÇÃO -->
+                <div class="address-card">
+
+                    <h3>Localização</h3>
+
+                    <p class="lab-name">
+                        Instituto de Pesquisas Tecnológicas - IPT
+                    </p>
+
+                    <p>Laboratório de Usos Finais e Gestão de Energia</p>
+                    <p>Av. Prof. Almeida Prado, 532</p>
+                    <p>Butantã • São Paulo/SP</p>
+                    <p>CEP 05508-901</p>
+
+                    <a
+                        href="https://maps.google.com/?q=Av.+Prof.+Almeida+Prado,+532,+Butantã,+São+Paulo"
+                        target="_blank"
+                        class="btn btn-secondary location-btn"
+                    >
+                        Ver no Google Maps
+                    </a>
+
+                </div>
+
+                <!-- QR CODE -->
+                <div class="qr-card">
+
+                    <span class="qr-tag">
+                        Portfólio Digital
+                    </span>
+
+                    <h4>
+                        Escaneie e conheça nosso site oficial e veja muito mais
+                    </h4>
+
+                    <div class="qr-img-wrap">
+                        <img src="assets/qrcodeipt.png" alt="QR Code IPT">
+                    </div>
+
+                    <p class="qr-hint">
+                        Acesse o portfólio institucional e entre em contato com nossa equipe.
+                    </p>
+
+                </div>
 
             </div>
 
         </div>
 
     </div>
-
-</div>
 </section>
 
 
@@ -868,7 +867,7 @@ function switchVideo(element, videoUrl, title, tag) {
 </script>
 
 
-
+<script src="infra-control.js"></script>
 </body>
 
 </html>

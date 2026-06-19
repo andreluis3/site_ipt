@@ -654,7 +654,7 @@ a { text-decoration: none; }
 }
 
 /* Painel de Exibição Principal */
-/* Painel de Exibição Principal */
+
 
 .infra-main-overlay {
     position: absolute;
@@ -1154,79 +1154,388 @@ a { text-decoration: none; }
 }
    
 
+/* ==========================================================================
+   VISUALIZADOR DE INFRAESTRUTURA (GALERIA PREMIUM)
+   ========================================================================== */
 
+.sobre-gallery-side {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.infra-main-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(6, 12, 26, 0.9) 0%, rgba(6, 12, 26, 0.2) 60%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.infra-main-overlay h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin: 0 0 4px 0;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.infra-main-overlay p {
+    color: var(--cyan);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.live-indicator {
+    position: absolute;
+    top: 20px; 
+    right: 20px;
+    font-size: 0.7rem;
+    color: rgba(0, 240, 255, 0.8);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    background: rgba(6, 12, 26, 0.7);
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ping-dot {
+    width: 6px; 
+    height: 6px;
+    background-color: #00f0ff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { transform: scale(0.9); opacity: 0.6; box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.7); }
+    50% { transform: scale(1.1); opacity: 1; box-shadow: 0 0 8px 2px #00f0ff; }
+    100% { transform: scale(0.9); opacity: 0.6; box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.7); }
+}
+
+/* Grid de Miniaturas */
+.infra-thumbnails-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+}
+
+/* Estado Padrão Limpo da Miniatura (Fim de contornos borrados) */
+.infra-thumb {
+    position: relative;
+    height: 85px;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    background-color: #060c1a;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    
+    /* Garante um recorte perfeito do filtro blur com o background-clip */
+    overflow: hidden;
+    background-clip: padding-box; 
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.thumb-blur-cover {
+    position: absolute;
+    inset: 0;
+    background: rgba(6, 12, 26, 0.65);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.infra-thumb span {
+    position: relative;
+    z-index: 2;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 0 8px;
+    transition: color 0.3s ease;
+}
+
+/* Hover Unificado e Sem Conflitos */
+.infra-thumb:hover {
+    transform: translateY(-2px) translateZ(0);
+    box-shadow: 0 0 0 1px rgba(0, 240, 255, 0.3), 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.infra-thumb:hover .thumb-blur-cover {
+    background: rgba(0, 240, 255, 0.12);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+}
+
+.infra-thumb:hover span { 
+    color: #ffffff; 
+}
+
+/* Estado Ativo Consolidado (Neon Liso e sem linhas fantasmas externas) */
+.infra-thumb.active {
+    box-shadow: 
+        0 0 0 2px #00f0ff, 
+        0 0 20px rgba(0, 240, 255, 0.35), 
+        inset 0 0 12px rgba(0, 240, 255, 0.2);
+    transform: translateY(-3px) translateZ(0);
+}
+
+.infra-thumb.active .thumb-blur-cover {
+    background: rgba(6, 12, 26, 0.1);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+}
+
+.infra-thumb.active span {
+    color: #00f0ff;
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+}
 
 /* ==========================================================================
-   SEÇÃO VÍDEOS DA INFRAESTRUTURA 
+   TELA DE EXIBIÇÃO DA INFRAESTRUTURA (MAXI SCREEN RESPONSIBO)
    ========================================================================== */
-/* Customizações para o Monitor de Vídeo */
-.infra-video-element {
-    filter: brightness(0.9) contrast(1.05);
-}
 
-/* Indicador visual discreto nas miniaturas de vídeo para indicar mídia reproduzível */
-.video-play-indicator {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    width: 6px;
-    height: 6px;
-    background: #00f0ff;
-    border-radius: 50%;
-    z-index: 3;
-    opacity: 0.4;
-    transition: opacity 0.3s ease;
-}
-
-.infra-thumb:hover .video-play-indicator,
-.infra-thumb.active .video-play-indicator {
-    opacity: 1;
-    box-shadow: 0 0 8px #00f0ff;
-}
-
-/* Subtítulo curto abaixo do título principal */
-.infra-subtitle {
-    color: var(--text-secondary);
-    max-width: 600px;
-    margin: 1rem auto 0 auto;
-    font-size: 1.05rem;
-    line-height: 1.6;
-}
-
-/* Wrapper centralizado que limita a largura máxima do monitor */
 .infra-central-wrapper {
-    max-width: 960px; /* Alinhamento elegante na tela */
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 20px;
 }
 
-/* Customização do Monitor para o modo Centralizado Grande */
-.infra-main-display.central-monitor {
-    height: 480px; /* Vídeo bem mais alto e imponente */
-    width: 100%;
-    background: #020508;
+/* O Monitor Principal Expandido */
+.infra-main-display {
     position: relative;
-    border-radius: 16px;
-    border: 1px solid rgba(0, 240, 255, 0.25);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 240, 255, 0.05);
+    width: 100%;
+    height: 600px; /* Altura imponente para destaque de exibição */
+    border-radius: 20px;
+    background-color: #020508;
     overflow: hidden;
+    box-shadow: 
+        0 0 0 1px rgba(0, 240, 255, 0.15),
+        0 25px 60px rgba(0, 0, 0, 0.6);
 }
 
-.infra-main-display.central-monitor video {
+.infra-main-display video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    display: block;
+    object-fit: cover; /* Preenche toda a tela sem distorcer o vídeo */
 }
 
-/* Ajuste das Miniaturas para ficarem perfeitamente encaixadas abaixo */
-.infra-thumbnails-grid.central-thumbs {
+.infra-main-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(5, 8, 17, 0.95) 0%, rgba(5, 8, 17, 0.2) 50%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 3rem 2.5rem;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.infra-main-overlay h3 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+}
+
+.infra-main-overlay p {
+    color: var(--cyan);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+/* HUD Live Stream Indicator */
+.live-indicator {
+    position: absolute;
+    top: 25px; 
+    right: 25px;
+    font-size: 0.75rem;
+    color: #00f0ff;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    background: rgba(5, 8, 17, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.ping-dot {
+    width: 7px; 
+    height: 7px;
+    background-color: #00f0ff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulseGlow 1.8s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { transform: scale(0.9); opacity: 0.5; box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.6); }
+    50% { transform: scale(1.1); opacity: 1; box-shadow: 0 0 10px 3px #00f0ff; }
+    100% { transform: scale(0.9); opacity: 0.5; box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.6); }
+}
+
+/* Grid de Miniaturas Abaixo */
+.infra-thumbnails-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    width: 100%;
+    gap: 16px;
+}
+
+.infra-thumb {
+    position: relative;
+    height: 100px; /* Aumentado levemente para acompanhar a proporção da tela principal */
+    border-radius: 14px;
+    background-size: cover;
+    background-position: center;
+    background-color: #060c1a;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    background-clip: padding-box;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.thumb-blur-cover {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 8, 17, 0.65);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.infra-thumb span {
+    position: relative;
+    z-index: 2;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 0 12px;
+    transition: color 0.3s ease;
+}
+
+/* Interações do Mouse */
+.infra-thumb:hover {
+    transform: translateY(-3px) translateZ(0);
+    box-shadow: 0 0 0 1px rgba(0, 240, 255, 0.3), 0 12px 28px rgba(0, 0, 0, 0.5);
+}
+
+.infra-thumb:hover .thumb-blur-cover {
+    background: rgba(0, 240, 255, 0.1);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+}
+
+.infra-thumb:hover span { 
+    color: #ffffff; 
+}
+
+/* Miniatura Ativa (Borda Neon de Alta Fidelidade) */
+.infra-thumb.active {
+    box-shadow: 
+        0 0 0 2px #00f0ff, 
+        0 0 25px rgba(0, 240, 255, 0.4), 
+        inset 0 0 12px rgba(0, 240, 255, 0.25);
+    transform: translateY(-4px) translateZ(0);
+}
+
+.infra-thumb.active .thumb-blur-cover {
+    background: transparent;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+}
+
+.infra-thumb.active span {
+    color: #00f0ff;
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+}
+
+/* RESPONSIVIDADE COMPLETA (MOBILE-FIRST ADAPTATION) */
+@media (max-width: 992px) {
+    .infra-main-display {
+        height: 450px; /* Reduz proporcionalmente em tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .infra-main-display {
+        height: 320px; /* Altura ideal para smartphones em modo retrato */
+        border-radius: 14px;
+    }
+    
+    .infra-main-overlay {
+        padding: 1.5rem;
+    }
+    
+    .infra-main-overlay h3 {
+        font-size: 1.3rem;
+    }
+    
+    .infra-main-overlay p {
+        font-size: 0.8rem;
+    }
+
+    .infra-thumbnails-grid {
+        grid-template-columns: 1fr; /* Quebra em lista vertical no mobile para dar leitura */
+        gap: 12px;
+    }
+    
+    .infra-thumb {
+        height: 75px;
+        border-radius: 10px;
+    }
+}
+
+/* Ajustes de Layout */
+@media(max-width: 992px) {
+    .sobre-split-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
 }
 
 /* Responsividade para monitores menores e celulares */
